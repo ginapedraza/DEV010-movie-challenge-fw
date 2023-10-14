@@ -1,13 +1,14 @@
-import docuPulseLogo from '../assets/logo-web-docuPulse-noBackground.png';
+//import docuPulseLogo from '../assets/logo-web-docuPulse-noBackground.png';
 import '../App.css';
 import './Home.css';
+import Header from '../elements/header';
 
 const Home = () => {
 
   return (
     <>
       <div>
-        <img src={docuPulseLogo} className="logo" alt='DocuPulse logo' />
+        <Header brand='docuPulse'/>
       </div>
 
       <div className="movie-cards">

@@ -1,17 +1,28 @@
-//import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
 import Home from './components/Home';
 import Movie from './components/Movie';
+import ErrorPage from './components/error-page';
 
 const App = () => {
 
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Home />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/movie',
+          element: <Movie />
+        },
+      ]
+
+    },
+    
+
+  ]);
   return (
-    <Router>
-      <Routes>
-        <Route path="/" Component= {Home} />
-        <Route path="/movie" Component= {Movie} />
-      </Routes>
-    </Router>
+    <RouterProvider router={router} />
   );
 };
 
