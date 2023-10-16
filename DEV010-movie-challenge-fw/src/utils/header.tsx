@@ -1,7 +1,7 @@
 //import * as React from "react"; 
 import docuPulseLogo from '../assets/logo-web-docuPulse-noBackground.png';
 import arrowImage from '../assets/arrow.png';
-import '../components/Home.css';
+import '../styles/Home.css';
 
 const Header = () => {
   return (
