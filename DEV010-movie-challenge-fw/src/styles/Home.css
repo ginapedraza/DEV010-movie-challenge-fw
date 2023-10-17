@@ -9,10 +9,7 @@ body {
     transition: filter 300ms;
   }
   .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+    filter: drop-shadow(0 0 2em #C72C41);
   }
 
   .arrowImage {
@@ -36,16 +33,34 @@ body {
   }
 
   .header {
+    justify-content: center;
     background-color: #2D132C;
     height: 100px;
-    padding-left: 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     width: 100%;/* Ancho del 100% */
+  position: fixed; /* Fija el header en la parte superior */
+  z-index: 100; /* Asegura que el header esté encima de otros elementos */
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 75%;
+  }
+
+  .full-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   .movie-cards {
+    width: 75%;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     display: grid;
     margin: 40px 40px 0px 40px;
@@ -66,6 +81,7 @@ body {
     width: 154px;
     margin-bottom: 20px;
     box-shadow: 0 8px 8px rgba(237, 224, 224, 0.2);
+    border-radius: 2%;
     
   }
 
@@ -112,6 +128,11 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
   }
+
+  .button-next:hover {
+    filter: drop-shadow(0 0 2em #C72C41);
+  }
+
 
   .nextImage {
     width: 1.2em;
