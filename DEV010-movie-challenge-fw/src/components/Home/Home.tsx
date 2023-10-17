@@ -1,10 +1,10 @@
 //import docuPulseLogo from '../assets/logo-web-docuPulse-noBackground.png';
 import { useEffect, useState } from 'react';
-import { requestMovies, buildMovieApiUrl, API_KEY, Movie } from '../requests/moviesRequest';
-import '../styles/App.css';
-import '../styles/Home.css';
-import Header from '../utils/header';
-import nextImage from '../assets/next-image.png';
+import { requestMovies, buildMovieApiUrl, API_KEY, Movie } from '../../requests/moviesRequest';
+import '../../styles/App.css';
+import './Home.css';
+import Header from '../../utils/header';
+import nextImage from '../../assets/next-image.png';
 
 const Home = () => {
   const [movies, setMovies] = useState<Movie[]>([]);

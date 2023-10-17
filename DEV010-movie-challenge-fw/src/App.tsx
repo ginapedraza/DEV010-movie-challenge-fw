@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
-import Home from './components/Home';
-import Movie from './components/Movie';
-import ErrorPage from './components/error-page';
+import Home from './components/Home/Home';
+import Movie from './components/Movie/Movie';
+import ErrorPage from './components/Error/error-page';
 
 const App = () => {
 

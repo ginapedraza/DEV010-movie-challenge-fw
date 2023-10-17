@@ -24,12 +24,19 @@ body {
     margin-left: 40px;
     
   }
+  .movie-language:hover {
+    filter: drop-shadow(0 0 2em #C72C41);
+  }
   .sort-by {
     background: none;
     color: white;
     border: none;
     margin-left: 20px;
     
+  }
+
+  .sort-by:hover {
+    filter: drop-shadow(0 0 2em #C72C41);
   }
 
   .header {
@@ -48,7 +55,7 @@ body {
   .header-container {
     display: flex;
     align-items: center;
-    width: 75%;
+    width: 70%;
   }
 
   .full-container {
@@ -60,7 +67,7 @@ body {
   }
 
   .movie-cards {
-    width: 75%;
+    width: 70%;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     display: grid;
     margin: 40px 40px 0px 40px;
@@ -77,8 +84,8 @@ body {
     align-items: center;
     overflow: hidden; /* Agrega esta propiedad */
     padding: 0px;
-    height: 310px;
-    width: 154px;
+    height: 375px;
+    width: 200px;
     margin-bottom: 20px;
     box-shadow: 0 8px 8px rgba(237, 224, 224, 0.2);
     border-radius: 2%;
@@ -86,13 +93,13 @@ body {
   }
 
   .link-movie {
-    height: 220px;
+    height: 284px;
   
   }
 
-  .img-movie {
-    width: 154px;
-    height: 220px;
+  .movie-img {
+    width: 200px;
+    height: 284px;
     margin-bottom: 0px;
   }
 
@@ -101,7 +108,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #C72C41;
-    width: 154px;
+    width: 200px;
     height: 90px;
     font-size: 0.8em; /* Tamaño de fuente relativo */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -130,7 +137,7 @@ body {
   }
 
   .button-next:hover {
-    filter: drop-shadow(0 0 2em #C72C41);
+    filter: drop-shadow(0 0 2em rgba(250, 248, 248, 0.747));
   }
 
 

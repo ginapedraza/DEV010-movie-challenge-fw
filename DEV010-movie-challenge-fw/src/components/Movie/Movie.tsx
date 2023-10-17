@@ -1,4 +1,4 @@
-import docuPulseLogo from '../assets/logo-web-docuPulse-noBackground.png';
+import docuPulseLogo from '../../assets/logo-web-docuPulse-noBackground.png';
 //import './App.css';
 
 const Movie = () => {
