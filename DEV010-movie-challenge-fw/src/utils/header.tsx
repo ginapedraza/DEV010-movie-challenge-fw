@@ -18,8 +18,6 @@ const Header = () => {
           </button>
         </div>
 
-        <form className='search-bar'></form>
-
       </div>
 
     </header>

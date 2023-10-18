@@ -1,0 +1,54 @@
+.logo {
+    height: 6em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #C72C41);
+  }
+
+  .arrowImage {
+    width: 0.7em;
+    height: 0.7em;
+  }
+
+  .movie-language {
+    background: none;
+    color: white;
+    border: none;
+    margin-left: 40px;
+    outline: none !important;
+  }
+  .movie-language:hover {
+    filter: drop-shadow(0 0 2em #C72C41);
+  }
+  .sort-by {
+    background: none;
+    color: white;
+    border: none;
+    margin-left: 20px;
+    outline: none !important;
+  }
+
+  .sort-by:hover {
+    filter: drop-shadow(0 0 2em #C72C41);
+  }
+
+  .header {
+    justify-content: center;
+    background-color: #2D132C;
+    height: 100px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items:center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     width: 100%;/* Ancho del 100% */
+  position: fixed; /* Fija el header en la parte superior */
+  z-index: 100; /* Asegura que el header esté encima de otros elementos */
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 65%;
+  }
