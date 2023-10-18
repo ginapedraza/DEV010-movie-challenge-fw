@@ -2,8 +2,8 @@
 
 ### Sprint learnings
 
-Aprendimos a crear una aplicación React y TypeScript usando ViteJS.
-Hicimos una petición con fetch a la API The Movie Database.
+Creación de aplicación React y TypeScript usando ViteJS.
+Petición con fetch a la API The Movie Database.
 
 
 ### Added
