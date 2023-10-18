@@ -63,17 +63,20 @@
     text-align: center;
     text-overflow: ellipsis;
     justify-content: center;
-    padding: 5px;
+    padding: 0px 4px;
     box-sizing: border-box;
     border-radius: 0% 0% 2% 2%;
   }
 
 
-
   .movie-date {
-    margin: 5px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #2D132C;
+    margin: 0px;
+  }
+
+  .movie-title {
+    margin: 0px;
   }
 
   .button-next {
