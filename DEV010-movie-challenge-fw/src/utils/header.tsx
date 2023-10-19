@@ -9,7 +9,7 @@ const Header = () => {
       <div className='header-container'>
         <img src = {docuPulseLogo} className= 'logo' />
         <div className='dropDown-button'>
-          <button className='movie-language'> Movie Language <img src = {arrowImage} className= 'arrowImage' alt = 'Arrow down' />
+          <button className='movie-language'> Documentary Language <img src = {arrowImage} className= 'arrowImage' alt = 'Arrow down' />
           </button>
         </div>
 

@@ -4,7 +4,7 @@ import './Home.css';
 import '../../utils/header.css';
 import Header from '../../utils/header';
 import MovieList from '../MovieList';
-//import SearchBar from '../SearchBar';
+import posterHome from '../../assets/poster-home.png';
 
 const Home = () => {
   return (
@@ -13,9 +13,12 @@ const Home = () => {
         <Header />
       </div>
 
-      {/*<div>
-        <SearchBar/>
-  </div>*/}
+      <div className='poster-container'>
+        <img src = {posterHome} className= 'posterHome' alt = 'poster'/>
+        <div className='title-container'>
+          <h1 className="poster-title">Uncover Reality, One Film at a Time...</h1>
+        </div>
+      </div>
 
       <div>
         <MovieList />

@@ -1,5 +1,5 @@
 .logo {
-    height: 6em;
+    height: 7em;
     will-change: filter;
     transition: filter 300ms;
   }
@@ -18,6 +18,7 @@
     border: none;
     margin-left: 40px;
     outline: none !important;
+    font-size: 20px;
   }
   .movie-language:hover {
     filter: drop-shadow(0 0 2em #C72C41);
@@ -28,6 +29,7 @@
     border: none;
     margin-left: 20px;
     outline: none !important;
+    font-size: 20px;
   }
 
   .sort-by:hover {
@@ -50,5 +52,5 @@
   .header-container {
     display: flex;
     align-items: center;
-    width: 65%;
+    width: 95%;
   }

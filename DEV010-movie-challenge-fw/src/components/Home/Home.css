@@ -1,7 +1,27 @@
+.poster-container {
+  position: relative;
+}
 
+
+.title-container {
+  width: 95%;
+  display: flex;
+  
+}
+.poster-title {
+  position:absolute;
+  top: 50%; /* Alinea el título en la mitad superior del contenedor */
+  left: 50%;
+ /* Alinea el título en el centro del contenedor */
+  transform: translate(-50%, -50%); /* Centra el título tanto vertical como horizontalmente */
+  z-index: 1; /* Coloca el título sobre la imagen */
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+}
 
   .full-container {
-    margin-top: 120px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +30,7 @@
   }
 
   .movie-cards {
-    width: 65%;
+    width: 95%;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     display: grid;
     grid-template-rows: max-content;
@@ -97,12 +117,14 @@
     width: 1em;
     height: 1em;
     margin-left: 20px;
+    background: none;
   }
   
   .previousImage {
     width: 1em;
     height: 1em;
     margin-right: 20px;
+    background: none;
   }
   .centered-container {
     display: flex;

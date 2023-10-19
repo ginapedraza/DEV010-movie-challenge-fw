@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../requests/moviesRequest';
 import nextImage from '../assets/next-image.png';
 import previousImage from '../assets/previous-image.png';
+import firstPage from '../assets/first-page.png';
+import lastPage from '../assets/last-page.png';
 import './Home/Home.css';
 
 const MovieList = () => {
@@ -42,6 +44,14 @@ const MovieList = () => {
     // Incrementa el número de página
     setCurrentPage(currentPage - 1);
   };
+  const handleLastPage = () => {
+    setCurrentPage(500);
+  };
+
+  const handleFirstPage = () => {
+    setCurrentPage(1);
+  };
+
 
   
   // Renderizamos el componente
@@ -72,15 +82,23 @@ const MovieList = () => {
 
         {/* Sección que contiene los botones*/}
         <div className="centered-container">
+          
           {/* Botón para avanzar a la siguiente página */}
           {currentPage > 1 && (
-            <button className= 'button-next' onClick={handlePreviousPage}>
-              <img src = {previousImage} className= 'previousImage' alt = 'Arrow left' />Previous page
-            </button> 
+            <>
+              <button className= 'button-next' onClick={handleFirstPage}>
+                <img src = {firstPage} className= 'previousImage' alt = 'First Page' />
+              </button>
+              <button className= 'button-next' onClick={handlePreviousPage}>
+                <img src = {previousImage} className= 'previousImage' alt = 'Arrow left' />Previous page
+              </button> 
+            </>
           )}
           {/* Se llama a la función handleNextPAge cada vez que se hace click */}
           <button className= 'button-next' onClick={handleNextPage}>Load More
             <img src = {nextImage} className= 'nextImage' alt = 'Arrow right' /></button>
+          <button className= 'button-next' onClick={handleLastPage}>
+            <img src = {lastPage} className= 'nextImage' alt = 'Last Page' /></button>
   
         </div>
       </div>
