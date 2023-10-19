@@ -3,6 +3,7 @@ import docuPulseLogo from '../assets/logo-web-docuPulse-noBackground.png';
 import arrowImage from '../assets/arrow.png';
 import '../components/Home/Home.css';
 
+
 const Header = () => {
   return (
     <header className='header'>

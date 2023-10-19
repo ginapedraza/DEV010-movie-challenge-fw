@@ -1,36 +1,63 @@
-/*import { useState } from 'react';
+//import { useState } from 'react';
+import nextImage from '../assets/next-image.png';
+import previousImage from '../assets/previous-image.png';
+import firstPage from '../assets/first-page.png';
+import lastPage from '../assets/last-page.png';
 import './Home/Home.css';
-import Movie from './Movie/Movie';
 
-interface SearchBarProps {
-    allMovies: Movie[]; // Asegúrate de importar el tipo Movie desde tu archivo de definiciones
-  }
+interface PaginationProps {
+  page: number; 
+  /* eslint-disable-no-unused-vars */
+  setCurrentPage: (page: number) => void;
+  
+}
 
-const SearchBar: React.FC<SearchBarProps> = ({ allMovies }) => {
+const Pagination: React.FC<PaginationProps> = ({ page, setCurrentPage }) => {
+  // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
 
-  const [search, setSearch] = useState('');
-  const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
-
-
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchTerm = event.target.value;
-    setSearch(searchTerm);
-
-    // Filtrar las películas que coinciden con el término de búsqueda
-    const filtered = allMovies.filter(movie =>
-      movie.original_title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setFilteredMovies(filtered);
+  //Funcion para manejar el cambio de página
+  const handleNextPage = () => {
+    // Incrementa el número de página
+    setCurrentPage(page + 1);
   };
+  const handlePreviousPage = () => {
+    // Incrementa el número de página
+    setCurrentPage(page - 1);
+  };
+  const handleLastPage = () => {
+    setCurrentPage(500);
+  };
+
+  const handleFirstPage = () => {
+    setCurrentPage(1);
+  };
+
+
+  // Renderizamos el componente
   return (
-    <div className='search-bar-container'>
-      <input className='search-bar' type='text' placeholder='Search for films' value= {search} onChange={onChange}></input>
-
-    </div>
+    <>
+      <div className="centered-container">
+        {/* Botón para avanzar a la siguiente página */}
+        {page > 1 && (
+          <>
+            <button className= 'button-next' onClick={handleFirstPage}>
+              <img src = {firstPage} className= 'previousImage' alt = 'First Page' />
+            </button>
+            <button className= 'button-next' onClick={handlePreviousPage}>
+              <img src = {previousImage} className= 'previousImage' alt = 'Arrow left' />Previous page
+            </button> 
+          </>
+        )}
+        {/* Se llama a la función handleNextPAge cada vez que se hace click */}
+        <button className= 'button-next' onClick={handleNextPage}>Load More
+          <img src = {nextImage} className= 'nextImage' alt = 'Arrow right' /></button>
+        <button className= 'button-next' onClick={handleLastPage}>
+          <img src = {lastPage} className= 'nextImage' alt = 'Last Page' /></button>
+      </div>
+    </>
   );
-};*/
+    
+};
 
 
-
-//export default SearchBar;
+export default Pagination; 

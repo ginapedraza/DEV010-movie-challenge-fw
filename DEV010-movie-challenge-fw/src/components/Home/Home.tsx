@@ -2,8 +2,8 @@
 import '../../styles/App.css';
 import './Home.css';
 import '../../utils/header.css';
-import Header from '../../utils/header';
-import MovieList from '../MovieList';
+import Header from '../../utils/header.tsx';
+import MovieList from '../MovieList/MovieList.tsx';
 import posterHome from '../../assets/poster-home.png';
 
 const Home = () => {

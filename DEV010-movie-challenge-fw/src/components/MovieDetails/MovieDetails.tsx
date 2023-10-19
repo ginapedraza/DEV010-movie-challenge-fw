@@ -1,7 +1,7 @@
 import docuPulseLogo from '../../assets/logo-web-docuPulse-noBackground.png';
 //import './App.css';
 
-const Movie = () => {
+const MovieDetails = () => {
 
   return (
     <>
@@ -18,4 +18,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default MovieDetails;

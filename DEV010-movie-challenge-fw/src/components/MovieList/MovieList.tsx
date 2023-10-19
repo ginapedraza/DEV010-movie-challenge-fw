@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/moviesRequest';
 import '../Home/Home.css';
-import nextImage from '../../assets/next-image.png';
-import previousImage from '../../assets/previous-image.png';
-import firstPage from '../../assets/first-page.png';
-import lastPage from '../../assets/last-page.png';
+import Pagination from '../Pagination';
 
 const MovieList = () => {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
@@ -35,24 +32,6 @@ const MovieList = () => {
     // Segundo parámetro Dependencias es currentPage (se va a ejecutar lo anterior cada vez que cambie currentPage)
   }, [currentPage]);
 
-  //Funcion para manejar el cambio de página
-  const handleNextPage = () => {
-    // Incrementa el número de página
-    setCurrentPage(currentPage + 1);
-  };
-  const handlePreviousPage = () => {
-    // Incrementa el número de página
-    setCurrentPage(currentPage - 1);
-  };
-  const handleLastPage = () => {
-    setCurrentPage(500);
-  };
-
-  const handleFirstPage = () => {
-    setCurrentPage(1);
-  };
-
-
   
   // Renderizamos el componente
   return (
@@ -79,27 +58,9 @@ const MovieList = () => {
             </div>
           ))}
         </div>
-
-        {/* Sección que contiene los botones de la paginación*/}
-        <div className="centered-container">
-          {currentPage > 1 && (
-            <>
-              <button className= 'button-next' onClick={handleFirstPage}>
-                <img src = {firstPage} className= 'previousImage' alt = 'First Page' />
-              </button>
-              <button className= 'button-next' onClick={handlePreviousPage}>
-                <img src = {previousImage} className= 'previousImage' alt = 'Arrow left' />Previous page
-              </button> 
-            </>
-          )}
-          {/*Se llama a la función handleNextPAge cada vez que se hace click */}
-          <button className= 'button-next' onClick={handleNextPage}>Load More
-            <img src = {nextImage} className= 'nextImage' alt = 'Arrow right' /></button>
-          <button className= 'button-next' onClick={handleLastPage}>
-            <img src = {lastPage} className= 'nextImage' alt = 'Last Page' /></button>
-          
+        <Pagination page= { currentPage } setCurrentPage= { setCurrentPage } />
   
-        </div>
+  
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Movie from './components/Movie/Movie';
+import MovieDetails from './components/MovieDetails/MovieDetails';
 import ErrorPage from './components/Error/error-page';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
       children: [
         {
           path: '/movie',
-          element: <Movie />
+          element: <MovieDetails />
         },
       ]
 
