@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/16</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/16</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -144,25 +144,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,7 +189,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//import { useState } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Dispatch, SetStateAction } from 'react';
 import nextImage from '../assets/next-image.png';
 import previousImage from '../assets/previous-image.png';
 import firstPage from '../assets/first-page.png';
@@ -197,40 +197,40 @@ import lastPage from '../assets/last-page.png';
 import './Home/Home.css';
 &nbsp;
 interface PaginationProps {
-  page: number; 
+ page: number; 
   /* eslint-disable-no-unused-vars */
-  setCurrentPage: (page: number) =&gt; void;
+  setCurrentPage: Dispatch&lt;SetStateAction&lt;number&gt;&gt;;
   
 }
 &nbsp;
-const Pagination: React.FC&lt;PaginationProps&gt; = ({ page, setCurrentPage }) =&gt; {
+const Pagination: React.FC&lt;PaginationProps&gt; = <span class="fstat-no" title="function not covered" >({</span> page, setCurrentPage }) =&gt; {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
 &nbsp;
   //Funcion para manejar el cambio de página
-  const handleNextPage = <span class="fstat-no" title="function not covered" >() =</span>&gt; {
+  const handleNextPage = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
     // Incrementa el número de página
 <span class="cstat-no" title="statement not covered" >    setCurrentPage(page + 1);</span>
   };
-  const handlePreviousPage = <span class="fstat-no" title="function not covered" >() =</span>&gt; {
+  const handlePreviousPage = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
     // Incrementa el número de página
 <span class="cstat-no" title="statement not covered" >    setCurrentPage(page - 1);</span>
   };
-  const handleLastPage = <span class="fstat-no" title="function not covered" >() =</span>&gt; {
+  const handleLastPage = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setCurrentPage(500);</span>
   };
 &nbsp;
-  const handleFirstPage = <span class="fstat-no" title="function not covered" >() =</span>&gt; {
+  const handleFirstPage = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setCurrentPage(1);</span>
   };
 &nbsp;
 &nbsp;
   // Renderizamos el componente
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;&gt;
       &lt;div className="centered-container"&gt;
         {/* Botón para avanzar a la siguiente página */}
         {page &gt; 1 &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;&gt;</span>
+          &lt;&gt;
             &lt;button className= 'button-next' onClick={handleFirstPage}&gt;
               &lt;img src = {firstPage} className= 'previousImage' alt = 'First Page' /&gt;
             &lt;/button&gt;
@@ -259,7 +259,7 @@ export default Pagination;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-19T22:33:30.971Z
+                at 2023-10-20T12:39:56.317Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -1,4 +1,4 @@
-//import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import nextImage from '../assets/next-image.png';
 import previousImage from '../assets/previous-image.png';
 import firstPage from '../assets/first-page.png';
@@ -6,9 +6,9 @@ import lastPage from '../assets/last-page.png';
 import './Home/Home.css';
 
 interface PaginationProps {
-  page: number; 
+ page: number; 
   /* eslint-disable-no-unused-vars */
-  setCurrentPage: (page: number) => void;
+  setCurrentPage: Dispatch<SetStateAction<number>>;
   
 }
 

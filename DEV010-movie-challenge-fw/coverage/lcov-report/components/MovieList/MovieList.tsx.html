@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.25% </span>
+                <span class="strong">37.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/16</span>
+                <span class='fraction'>6/16</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.25% </span>
+                <span class="strong">37.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/16</span>
+                <span class='fraction'>6/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -139,24 +139,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,7 +168,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,18 +206,18 @@ import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/
 import '../Home/Home.css';
 import Pagination from '../Pagination';
 &nbsp;
-const MovieList = () =&gt; {
+const MovieList = <span class="fstat-no" title="function not covered" >() =</span>&gt; {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
-  const [movies, setMovies] = useState&lt;Movie[]&gt;([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [movies, setMovies] = <span class="cstat-no" title="statement not covered" >useState&lt;Movie[]&gt;([]);</span>
+  const [currentPage, setCurrentPage] = <span class="cstat-no" title="statement not covered" >useState(1);</span>
 &nbsp;
   //Usamos useEffect para ejecutar efectos de componentes funcionales externos
-  useEffect(() =&gt; {
+<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
 &nbsp;
     //Primer parámetro Configuraciones
-    const apiUrl = buildMovieApiUrl(currentPage);
+    const apiUrl = <span class="cstat-no" title="statement not covered" >buildMovieApiUrl(currentPage);</span>
     
-    const options: RequestInit = { // Opciones para la solicitud HTTP
+    const options: RequestInit = <span class="cstat-no" title="statement not covered" >{ // Opciones para la solicitud HTTP</span>
       method: 'GET',
       headers: {
         accept: 'application/json',
@@ -225,7 +225,7 @@ const MovieList = () =&gt; {
       },
     };
     
-    requestMovies(apiUrl, options)//Llamamos a la funcion requestMovies para que muestre la data.
+<span class="cstat-no" title="statement not covered" >    requestMovies(apiUrl, options)//Llamamos a la funcion requestMovies para que muestre la data.</span>
       .then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
 <span class="cstat-no" title="statement not covered" >        setMovies(data.results);</span>
       })
@@ -237,7 +237,7 @@ const MovieList = () =&gt; {
 &nbsp;
   
   // Renderizamos el componente
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;&gt;
       {/*Agregamos el contenedor principal*/}
       &lt;div className='full-container'&gt;
@@ -277,7 +277,7 @@ export default MovieList;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-19T22:33:30.971Z
+                at 2023-10-20T12:39:56.317Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
