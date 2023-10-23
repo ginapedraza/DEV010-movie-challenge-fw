@@ -1,26 +1,29 @@
-/*import  MovieList  from '../MovieList/MovieList'; 
+//import React from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
+//import userEvent from '@testing-library/user-event';
+import MovieList from './MovieList';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
-//import { Movie } from '../../requests/moviesRequest';
 
-global.fetch = jest.fn();
+// Mock de las funciones y datos necesarios para la prueba
+jest.mock('../../requests/moviesRequest', () => {
+  return {
+    buildMovieApiUrl: jest.fn(),
+    API_KEY: 'fake-api-key',
+    requestMovies: jest.fn(() => Promise.resolve({ results: [{ id: 1174725, original_title: 'Duell am Abgrund' }] })),
+  };
+});
 
-jest.mock('../../requests/moviesRequest.ts');
-jest.mock('../MovieList/MovieList');
-
-describe('MovieList', () => {
-  it('shows next page button', () => {
+describe('MovieList Component', () => {
+  it('renders a list of movies', async () => {
     render(<MovieList />);
-    const nextPageButton = screen.getByText('Load More');
-    expect(nextPageButton).toBeInTheDocument();
 
+    // Espera a que las películas se carguen (puedes personalizar según tu lógica de carga)
+    await waitFor(() => screen.getByText('Duell am Abgrund'));
+
+    // Realiza las aserciones
+    expect(screen.getByText('Duell am Abgrund')).toBeInTheDocument();
+
+    // También puedes hacer aserciones sobre otras películas, imágenes, etc.
   });
 
-  it('renders a list of movies', () => {
-    render(<MovieList />);
-    const movieCards = screen.getAllByTestId('movie-card');
-    expect(movieCards).not.toBeNull();
-    expect(movieCards.length).toBeGreaterThan(0);
-  });
-
-});*/
+});

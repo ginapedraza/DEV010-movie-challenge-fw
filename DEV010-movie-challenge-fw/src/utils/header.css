@@ -12,7 +12,7 @@
     height: 0.7em;
   }
 
-  .movie-language {
+  .date-filter {
     background: none;
     color: white;
     border: none;
@@ -20,7 +20,7 @@
     outline: none !important;
     font-size: 20px;
   }
-  .movie-language:hover {
+  .date-filter:hover {
     filter: drop-shadow(0 0 2em #C72C41);
   }
   .sort-by {
@@ -54,3 +54,29 @@
     align-items: center;
     width: 95%;
   }
+
+ /* Estilos CSS */
+.date-filter-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.options {
+  /* Estilos para las opciones */
+  position: absolute;
+  top: 100%; /* Coloca las opciones debajo del botón */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Centra horizontalmente */
+  display: none;
+  /* Otros estilos según tus necesidades */
+  list-style: none; /* Elimina los bullet points */
+  padding: 0; /* Elimina el espacio interior */
+  margin: 0; /* Elimina el margen */
+  background-color: #fff; /* Fondo blanco (opcional) */
+  border: 1px solid #ccc; /* Borde (opcional) */
+  border-top: none; /* Elimina el borde superior (opcional) */
+}
+
+.date-filter-wrapper:hover .options {
+  display: block; /* Muestra las opciones al pasar el mouse sobre el contenedor */
+}

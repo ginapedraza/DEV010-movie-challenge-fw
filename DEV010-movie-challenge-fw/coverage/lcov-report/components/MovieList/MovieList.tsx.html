@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/16</span>
+                <span class='fraction'>15/16</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/16</span>
+                <span class='fraction'>15/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -139,33 +139,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -175,8 +168,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,18 +206,18 @@ import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/
 import '../Home/Home.css';
 import Pagination from '../Pagination';
 &nbsp;
-const MovieList = <span class="fstat-no" title="function not covered" >() =</span>&gt; {
+const MovieList = () =&gt; {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
-  const [movies, setMovies] = <span class="cstat-no" title="statement not covered" >useState&lt;Movie[]&gt;([]);</span>
-  const [currentPage, setCurrentPage] = <span class="cstat-no" title="statement not covered" >useState(1);</span>
+  const [movies, setMovies] = useState&lt;Movie[]&gt;([]);
+  const [currentPage, setCurrentPage] = useState(1);
 &nbsp;
   //Usamos useEffect para ejecutar efectos de componentes funcionales externos
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+  useEffect(() =&gt; {
 &nbsp;
     //Primer parámetro Configuraciones
-    const apiUrl = <span class="cstat-no" title="statement not covered" >buildMovieApiUrl(currentPage);</span>
+    const apiUrl = buildMovieApiUrl(currentPage);
     
-    const options: RequestInit = <span class="cstat-no" title="statement not covered" >{ // Opciones para la solicitud HTTP</span>
+    const options: RequestInit = { // Opciones para la solicitud HTTP
       method: 'GET',
       headers: {
         accept: 'application/json',
@@ -225,9 +225,9 @@ const MovieList = <span class="fstat-no" title="function not covered" >() =</spa
       },
     };
     
-<span class="cstat-no" title="statement not covered" >    requestMovies(apiUrl, options)//Llamamos a la funcion requestMovies para que muestre la data.</span>
-      .then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
-<span class="cstat-no" title="statement not covered" >        setMovies(data.results);</span>
+    requestMovies(apiUrl, options)//Llamamos a la funcion requestMovies para que muestre la data.
+      .then((data) =&gt; {
+        setMovies(data.results);
       })
       .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
 <span class="cstat-no" title="statement not covered" >        console.error('Error:', error);</span>
@@ -237,15 +237,15 @@ const MovieList = <span class="fstat-no" title="function not covered" >() =</spa
 &nbsp;
   
   // Renderizamos el componente
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;&gt;
       {/*Agregamos el contenedor principal*/}
       &lt;div className='full-container'&gt;
         {/*Agregamos el contenedor de las tarjetas*/}
         &lt;div className='movie-cards'&gt;
           {/*Recorremos el arreglo movies y creamos una tarjeta con link, imagen y texto para cada una*/}
-          {movies.map(<span class="fstat-no" title="function not covered" >(m</span>ovie: Movie, i: number) =&gt; (
-<span class="cstat-no" title="statement not covered" >            &lt;div className='movie-box' key={i}&gt;</span>
+          {movies.map((movie: Movie, i: number) =&gt; (
+            &lt;div className='movie-box' key={i}&gt;
               &lt;a href='#' className='link-movie'&gt;
                 &lt;img
                   className='movie-img'
@@ -277,7 +277,7 @@ export default MovieList;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-20T12:39:56.317Z
+                at 2023-10-23T14:56:54.899Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

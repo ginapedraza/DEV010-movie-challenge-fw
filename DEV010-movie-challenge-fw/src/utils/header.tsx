@@ -2,6 +2,8 @@
 import docuPulseLogo from '../assets/logo-web-docuPulse-noBackground.png';
 import arrowImage from '../assets/arrow.png';
 import '../components/Home/Home.css';
+import MovieFilter from '../components/MovieFilter/MovieFilter';
+import './header.css';
 
 
 const Header = () => {
@@ -10,8 +12,7 @@ const Header = () => {
       <div className='header-container'>
         <img src = {docuPulseLogo} className= 'logo' />
         <div className='dropDown-button'>
-          <button className='movie-language'> Documentary Language <img src = {arrowImage} className= 'arrowImage' alt = 'Arrow down' />
-          </button>
+          <MovieFilter />
         </div>
 
         <div className='dropDown-button'>

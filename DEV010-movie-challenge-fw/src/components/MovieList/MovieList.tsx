@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/moviesRequest';
 import '../Home/Home.css';
-import Pagination from '../Pagination';
+import Pagination from '../Pagination/Pagination';
 
 const MovieList = () => {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage

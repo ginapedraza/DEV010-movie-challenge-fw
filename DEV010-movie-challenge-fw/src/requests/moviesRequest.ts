@@ -13,6 +13,12 @@ export type Movie = {
   vote_count: number;
 };
 
+export type Language = {
+  id: number;
+  name: string;
+};
+
+
 //Definimos la respuesta de la Api que nos dará un arreglo de objetos tipo Movie (definido anteriormente)
 export type ApiResponse = {
   results: Movie[];
