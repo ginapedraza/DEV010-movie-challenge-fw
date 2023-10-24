@@ -3,16 +3,22 @@ import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/
 import '../Home/Home.css';
 import Pagination from '../Pagination/Pagination';
 
-const MovieList = () => {
+interface MovieListProps {
+  selectedOption: string; // Recibe la opción seleccionada como prop
+}
+
+const MovieList: React.FC<MovieListProps> = ({ selectedOption }) => {
+  console.log(`Received option: ${selectedOption}`); 
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
   const [movies, setMovies] = useState<Movie[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+
 
   //Usamos useEffect para ejecutar efectos de componentes funcionales externos
   useEffect(() => {
 
     //Primer parámetro Configuraciones
-    const apiUrl = buildMovieApiUrl(currentPage);
+    const apiUrl = buildMovieApiUrl(currentPage, selectedOption);
     
     const options: RequestInit = { // Opciones para la solicitud HTTP
       method: 'GET',
@@ -30,7 +36,7 @@ const MovieList = () => {
         console.error('Error:', error);
       });
     // Segundo parámetro Dependencias es currentPage (se va a ejecutar lo anterior cada vez que cambie currentPage)
-  }, [currentPage]);
+  }, [currentPage, selectedOption]);
 
   
   // Renderizamos el componente
