@@ -32,7 +32,7 @@ const MovieList = ({ latestReleases, older }: { latestReleases: boolean, older: 
         console.error('Error:', error);
       });
     // Segundo parámetro Dependencias es currentPage (se va a ejecutar lo anterior cada vez que cambie currentPage)
-  }, [currentPage, latestReleases]);
+  }, [currentPage, latestReleases, older]);
 
   
   // Renderizamos el componente

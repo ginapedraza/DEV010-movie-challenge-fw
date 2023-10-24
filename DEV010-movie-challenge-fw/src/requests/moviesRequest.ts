@@ -25,8 +25,6 @@ export const buildMovieApiUrl = (page: number, latestReleases: boolean, older: b
   if (latestReleases) {
       // Obtener la fecha actual en formato yyyy-mm-dd
        const currentDate = new Date().toISOString().slice(0, 10);
-
-
     // URL para las últimas versiones
     return `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&primary_release_date.gte=2020-01-01&primary_release_date.lte=${currentDate}&sort_by=popularity.desc&with_genres=99`;
   }

@@ -11,18 +11,25 @@ import posterHome from '../../assets/poster-home.png';
 const Home = () => {
   const [latestReleases, setLatestReleases] = useState(false);
   const [older, setOlder] = useState(false);
+
+  const onLatestReleasesClick = () => {
+    //setLatestReleases(!latestReleases);
+    setLatestReleases( (prevState) => !prevState);
+
+  }
+
+  const onOlderClick = () => {
+    //setOlder(!older);
+    setOlder((prevState) => !prevState);
+  }
+
   return (
     <>
       <div>
       <Header
-  onLatestReleasesClick={() => {
-    setLatestReleases(!latestReleases);
-
-  }}
-  onOlderClick={() => {
-    setOlder(!older);
-  }}
-/>
+  onLatestReleasesClick={onLatestReleasesClick}
+  onOlderClick={onOlderClick}
+    />
       </div>
 
       <div className='poster-container'>
