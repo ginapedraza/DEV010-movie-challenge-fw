@@ -3,16 +3,18 @@ import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/
 import '../Home/Home.css';
 import Pagination from '../Pagination/Pagination';
 
-const MovieList = () => {
+const MovieList = ({ latestReleases }: { latestReleases: boolean }) => {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
   const [movies, setMovies] = useState<Movie[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  //const [latestReleases, setLatestReleases] = useState(false); // Variable de estado para las últimas versiones
+
 
   //Usamos useEffect para ejecutar efectos de componentes funcionales externos
   useEffect(() => {
 
     //Primer parámetro Configuraciones
-    const apiUrl = buildMovieApiUrl(currentPage);
+    const apiUrl = buildMovieApiUrl(currentPage, latestReleases);
     
     const options: RequestInit = { // Opciones para la solicitud HTTP
       method: 'GET',
@@ -30,7 +32,7 @@ const MovieList = () => {
         console.error('Error:', error);
       });
     // Segundo parámetro Dependencias es currentPage (se va a ejecutar lo anterior cada vez que cambie currentPage)
-  }, [currentPage]);
+  }, [currentPage, latestReleases]);
 
   
   // Renderizamos el componente

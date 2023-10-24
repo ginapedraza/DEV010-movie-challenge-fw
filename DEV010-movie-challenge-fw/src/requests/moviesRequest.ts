@@ -13,12 +13,6 @@ export type Movie = {
   vote_count: number;
 };
 
-export type Language = {
-  id: number;
-  name: string;
-};
-
-
 //Definimos la respuesta de la Api que nos dará un arreglo de objetos tipo Movie (definido anteriormente)
 export type ApiResponse = {
   results: Movie[];
@@ -27,9 +21,14 @@ export type ApiResponse = {
 //Guardamos en una constate la Api Key que necesitaremos como autorizavión
 export const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGUzMGMxZGY5ODEyZjAwZjFjOTZjMGNjYzI2OGZmZSIsInN1YiI6IjY1Mjk0Zjk1NjI5YjJjMDBjNTllNjM3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YcDVFDVV7B2k1qCjx1JHzsKXiew57qQD58OE03_0bmk'; 
 
-//Creamos una función que construya la URL según la página requerida
-export const buildMovieApiUrl = (page: number) => {
-  return `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=99`;
+export const buildMovieApiUrl = (page: number, latestReleases: boolean) => {
+  if (latestReleases) {
+    // URL para las últimas versiones
+    return `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&primary_release_date.gte=2020-01-01&primary_release_date.lte=2023-10-23&sort_by=popularity.desc&with_genres=99`;
+  } else {
+    // URL predeterminada
+    return `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=99`;
+  }
 };
 
 //Creamos una promesa para hacer la solicitud HTTP con fetch y obtenerla manejando los errores

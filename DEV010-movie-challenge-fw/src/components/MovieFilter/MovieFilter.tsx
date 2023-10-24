@@ -1,31 +1,17 @@
-import { useState } from 'react';
-import arrowImage from '../../assets/arrow.png';
+//import { useState } from 'react';
+//import arrowImage from '../../assets/arrow.png';
 
-
-const MovieFilter = () => {
-  const [isOptionVisible, setIsOptionVisible] = useState(false);
-
-  const filterOptions = () => {
-    setIsOptionVisible(!isOptionVisible);
-
+interface MovieFilterProps {
+  onLatestReleasesClick: (latestReleases: boolean) => void;
+}
+const MovieFilter: React.FC<MovieFilterProps> = ({ onLatestReleasesClick }) => {
+  const handleLatestReleasesClick = () => {
+    onLatestReleasesClick(true); // Pasa true cuando se hace clic en "Latest Releases"
   };
-
   return (
     <div className='date-filter-wrapper'>
-      <button className='date-filter'onClick={filterOptions} >Filter by Release Date <img src = {arrowImage} className= 'arrowImage' alt = 'Arrow down' /></button>
-      {isOptionVisible && (
-        
-        <div className='options'>
-          <ul>
-            <li>Latest Releases</li>
-            <li>Last Decade</li>
-            <li>Oldest</li>
-          </ul>
-        </div>
-       
-      )}
-
-            
+      <button className='date-filter' onClick={handleLatestReleasesClick}>Latest Releases</button>
+           
     </div>
   );
 };

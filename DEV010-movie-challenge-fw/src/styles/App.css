@@ -1,5 +1,5 @@
 #root {
-  background-image: url('C:\Users\Juan Viloria\Desktop\LABORATORIA\BOOTCAMP\5to-proyecto\DEV010-movie-challenge-fw\DEV010-movie-challenge-fw\src\assets\background-image.png');
+  background-image: url('../assets/background-image.png');
   background-size: cover; /* Cubre completamente la pantalla */
   margin: 0;
   height: 100%;
