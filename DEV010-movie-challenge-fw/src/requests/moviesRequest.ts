@@ -21,14 +21,23 @@ export type ApiResponse = {
 //Guardamos en una constate la Api Key que necesitaremos como autorizavión
 export const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZGUzMGMxZGY5ODEyZjAwZjFjOTZjMGNjYzI2OGZmZSIsInN1YiI6IjY1Mjk0Zjk1NjI5YjJjMDBjNTllNjM3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YcDVFDVV7B2k1qCjx1JHzsKXiew57qQD58OE03_0bmk'; 
 
-export const buildMovieApiUrl = (page: number, latestReleases: boolean) => {
+export const buildMovieApiUrl = (page: number, latestReleases: boolean, older: boolean) => {
   if (latestReleases) {
+      // Obtener la fecha actual en formato yyyy-mm-dd
+       const currentDate = new Date().toISOString().slice(0, 10);
+
+
     // URL para las últimas versiones
-    return `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&primary_release_date.gte=2020-01-01&primary_release_date.lte=2023-10-23&sort_by=popularity.desc&with_genres=99`;
-  } else {
+    return `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&primary_release_date.gte=2020-01-01&primary_release_date.lte=${currentDate}&sort_by=popularity.desc&with_genres=99`;
+  }
+  
+  if(older) {
+    // URL para las más antiguas
+    return `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&primary_release_date.gte=1900-01-01&primary_release_date.lte=2019-12-31&sort_by=popularity.desc&with_genres=99`;
+  }
     // URL predeterminada
     return `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=99`;
-  }
+  
 };
 
 //Creamos una promesa para hacer la solicitud HTTP con fetch y obtenerla manejando los errores

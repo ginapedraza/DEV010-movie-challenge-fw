@@ -2,18 +2,27 @@
 import { useState  } from 'react';
 import '../../styles/App.css';
 import './Home.css';
-import '../../utils/header.css';
-import Header from '../../utils/header.tsx';
+import '../Header/header.css';
+import Header from '../Header/header.tsx';
 import MovieList from '../MovieList/MovieList.tsx';
 //import MovieFilter from '../MovieFilter/MovieFilter';
 import posterHome from '../../assets/poster-home.png';
 
 const Home = () => {
   const [latestReleases, setLatestReleases] = useState(false);
+  const [older, setOlder] = useState(false);
   return (
     <>
       <div>
-        <Header onLatestReleasesClick={() => setLatestReleases(!latestReleases)} />
+      <Header
+  onLatestReleasesClick={() => {
+    setLatestReleases(!latestReleases);
+
+  }}
+  onOlderClick={() => {
+    setOlder(!older);
+  }}
+/>
       </div>
 
       <div className='poster-container'>
@@ -28,7 +37,7 @@ const Home = () => {
       </div>
 
       <div>
-        <MovieList latestReleases={latestReleases}/>
+        <MovieList latestReleases={latestReleases} older={older}/>
       </div>
     </>
   );
