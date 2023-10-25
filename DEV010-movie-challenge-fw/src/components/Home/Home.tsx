@@ -7,14 +7,17 @@ import Header from '../Header/header.tsx';
 import MovieList from '../MovieList/MovieList.tsx';
 //import MovieFilter from '../MovieFilter/MovieFilter';
 import posterHome from '../../assets/poster-home.png';
+//import SortBy from '../SortBy/SortBy.tsx';
 
 const Home = () => {
   const [latestReleases, setLatestReleases] = useState(false);
   const [older, setOlder] = useState(false);
+  const [sortByValue, setSortByValue] = useState('popularity.desc'); // valor inicial
+
 
   const onLatestReleasesClick = () => {
     //setLatestReleases(!latestReleases);
-    setLatestReleases( (prevState) => !prevState);
+    setLatestReleases((prevState) => !prevState);
 
   }
 
@@ -23,12 +26,17 @@ const Home = () => {
     setOlder((prevState) => !prevState);
   }
 
+  const onChangeSortBy = (selectedValue: string) => {
+    setSortByValue(selectedValue);
+  }
+
   return (
     <>
       <div>
       <Header
   onLatestReleasesClick={onLatestReleasesClick}
   onOlderClick={onOlderClick}
+  onChangeSortBy={onChangeSortBy}
     />
       </div>
 
@@ -44,7 +52,7 @@ const Home = () => {
       </div>
 
       <div>
-        <MovieList latestReleases={latestReleases} older={older}/>
+        <MovieList latestReleases={latestReleases} older={older} sortByValue={sortByValue}/>
       </div>
     </>
   );

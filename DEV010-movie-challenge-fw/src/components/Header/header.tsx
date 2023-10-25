@@ -2,14 +2,16 @@ import docuPulseLogo from '../../assets/logo-web-docuPulse-noBackground.png';
 //import arrowImage from '../../assets/arrow.png';
 import '../Home/Home.css';
 import MovieFilter from '../MovieFilter/MovieFilter';
+import SortBy from '../SortBy/SortBy';
 import './header.css';
 
 interface HeaderProps {
   onLatestReleasesClick: (latestReleases: boolean) => void;
   onOlderClick: (older: boolean) => void;
+  onChangeSortBy: (sortBy: string)=> void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onLatestReleasesClick, onOlderClick }) => {
+const Header: React.FC<HeaderProps> = ({ onLatestReleasesClick, onOlderClick, onChangeSortBy }) => {
   return (
     <header className='header'>
       <div className='header-container'>
@@ -18,11 +20,8 @@ const Header: React.FC<HeaderProps> = ({ onLatestReleasesClick, onOlderClick }) 
           <MovieFilter onLatestReleasesClick={() => onLatestReleasesClick(true)} onOlderClick={() => onOlderClick(true)} />
         </div>
         <div className='dropDown-button'>
-      <select className= 'sort-by' name="sort-by" id="sort" onChange={() => {}}>
-        <option value="1"> Sort By</option>
-        <option value="2">A-Z</option>
-        <option value="3">Z-A</option>
-      </select>
+          <SortBy onChangeSortBy={onChangeSortBy}/>
+
     </div>
         </div>
     </header>
