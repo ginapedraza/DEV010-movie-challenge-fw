@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import previousImage from '../../assets/previous-image.png';
 import { useParams } from 'react-router-dom';
-import { Movie } from '../../requests/moviesRequest';
+import { Movie, API_KEY } from '../../requests/moviesRequest';
 
 const MovieDetails = () => {
   const { movie_id } = useParams();
@@ -12,9 +12,15 @@ const MovieDetails = () => {
     // Realiza una solicitud a la API o carga la película desde una lista de películas
     // Aquí debes usar el `movie_id` para obtener los detalles de la película correspondiente.
     // Puedes hacer una solicitud a tu API o buscar la película en tu lista.
-
+    const options: RequestInit = { // Opciones para la solicitud HTTP
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: API_KEY,
+      },
+    };
     // Ejemplo de solicitud a la API (asegúrate de reemplazarlo con tu lógica):
-    fetch(`https://api.themoviedb.org/movie/${movie_id}`)
+    fetch(`https://api.themoviedb.org/3/movie/${movie_id}`, options)
       .then((response) => response.json())
       .then((data: Movie) => {
         setMovie(data);
