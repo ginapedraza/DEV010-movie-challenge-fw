@@ -16,32 +16,26 @@
     background: none;
     color: white;
     border: none;
-    margin-left: 40px;
+    margin-left: 60px;
     font-size: 20px;
+    cursor: pointer;
   }
   .date-filter:hover {
     filter: drop-shadow(0 0 2em #C72C41);
   }
 
-  .date-filter-older {
-    background: none;
-    color: white;
-    border: none;
-    margin-left: 40px;
-    font-size: 20px;
-  }
-  .date-filter-older:hover {
-    filter: drop-shadow(0 0 2em #C72C41);
-  }
 
   .sort-by {
-    background: none;
+    background: transparent;
     font-weight: bold;
     color: white;
     border: none;
     margin-left: 60px;
     font-size: 20px;
-    background-color: none;
+    cursor: pointer;
+    background-color: transparent;
+  
+    
   }
 
   .sort-by:hover {
@@ -67,16 +61,11 @@
     width: 95%;
   }
 
- /* Estilos CSS */
-.date-filter-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
 
 
 select option {
-  background-color: transparent;
+  background: transparent;
   color:#C72C41;
   font-weight: bold;
+  
 }

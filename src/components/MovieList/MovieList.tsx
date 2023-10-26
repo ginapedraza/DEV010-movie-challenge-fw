@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react';
 import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/moviesRequest';
 import '../Home/Home.css';
 import Pagination from '../Pagination/Pagination';
-//import SortBy from '../SortBy/SortBy';
+
 
 const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sortByValue: string }) => {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
   const [movies, setMovies] = useState<Movie[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  //const [sortByValue, setSortByValue] = useState('popularity.desc');
+  
 
 
   //Usamos useEffect para ejecutar efectos de componentes funcionales externos
   useEffect(() => {
-  //console.log('older', older);
+ 
     //Primer parámetro Configuraciones
     const apiUrl = buildMovieApiUrl(currentPage, filterByValue, sortByValue);
     
@@ -25,19 +25,16 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
       },
     };
     
-    requestMovies(apiUrl, options)//Llamamos a la funcion requestMovies para que muestre la data.
+    requestMovies(apiUrl, options)//Llamamos a la promesa requestMovies para que muestre la data.
       .then((data) => {
         setMovies(data.results);
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-    // Segundo parámetro Dependencias es currentPage (se va a ejecutar lo anterior cada vez que cambie currentPage)
+    // Segundo parámetro Dependencias es currentPage (se va a ejecutar lo anterior cada vez que cambie currentPage), filter y sort
   }, [currentPage, filterByValue, sortByValue]);
 
-  /*const handleSortByChange = (sortBy: string) => {
-    setSortByValue(sortBy);
-  };*/
   
   // Renderizamos el componente
   return (

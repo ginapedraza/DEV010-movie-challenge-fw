@@ -140,33 +140,3 @@
 
   }
 
-  /*.search-bar-container {
-    margin-top: 120px;
-    margin-bottom: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .search-bar {
-    padding-left: 25px; 
-    background: #490F22;
-    background-image: url('../../assets/search-icon.png');
-    background-size: 25px; 
-    background-repeat: no-repeat;
-    background-position: 10px center; 
-    border: none ;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 62%;
-    height: 40px;
-    padding: 0px 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15px;
-    color: white;
-    text-indent: 30px;
-  }
-
-  .search-bar::placeholder {
-    padding-left: 25px; 
-  }*/
-
