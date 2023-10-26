@@ -6,18 +6,17 @@ import SortBy from '../SortBy/SortBy';
 import './header.css';
 
 interface HeaderProps {
-  onLatestReleasesClick: (latestReleases: boolean) => void;
-  onOlderClick: (older: boolean) => void;
+  onChangeFilterBy: (filter: string) => void;
   onChangeSortBy: (sortBy: string)=> void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onLatestReleasesClick, onOlderClick, onChangeSortBy }) => {
+const Header: React.FC<HeaderProps> = ({ onChangeFilterBy, onChangeSortBy }) => {
   return (
     <header className='header'>
       <div className='header-container'>
         <img src={docuPulseLogo} className='logo' />
         <div className='dropDown-button'>
-          <MovieFilter onLatestReleasesClick={() => onLatestReleasesClick(true)} onOlderClick={() => onOlderClick(true)} />
+          <MovieFilter onChangeFilterBy={onChangeFilterBy} />
         </div>
         <div className='dropDown-button'>
           <SortBy onChangeSortBy={onChangeSortBy}/>

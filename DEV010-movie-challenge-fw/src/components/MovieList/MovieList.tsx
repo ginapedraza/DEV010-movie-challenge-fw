@@ -4,7 +4,7 @@ import '../Home/Home.css';
 import Pagination from '../Pagination/Pagination';
 //import SortBy from '../SortBy/SortBy';
 
-const MovieList = ({ latestReleases, older, sortByValue }: { latestReleases: boolean, older: boolean, sortByValue: string }) => {
+const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sortByValue: string }) => {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
   const [movies, setMovies] = useState<Movie[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,9 +13,9 @@ const MovieList = ({ latestReleases, older, sortByValue }: { latestReleases: boo
 
   //Usamos useEffect para ejecutar efectos de componentes funcionales externos
   useEffect(() => {
-  console.log('older', older);
+  //console.log('older', older);
     //Primer parámetro Configuraciones
-    const apiUrl = buildMovieApiUrl(currentPage, latestReleases, older, sortByValue);
+    const apiUrl = buildMovieApiUrl(currentPage, filterByValue, sortByValue);
     
     const options: RequestInit = { // Opciones para la solicitud HTTP
       method: 'GET',
@@ -33,7 +33,7 @@ const MovieList = ({ latestReleases, older, sortByValue }: { latestReleases: boo
         console.error('Error:', error);
       });
     // Segundo parámetro Dependencias es currentPage (se va a ejecutar lo anterior cada vez que cambie currentPage)
-  }, [currentPage, latestReleases, older, sortByValue]);
+  }, [currentPage, filterByValue, sortByValue]);
 
   /*const handleSortByChange = (sortBy: string) => {
     setSortByValue(sortBy);

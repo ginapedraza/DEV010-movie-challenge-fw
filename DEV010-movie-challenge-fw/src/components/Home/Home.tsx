@@ -10,20 +10,13 @@ import posterHome from '../../assets/poster-home.png';
 //import SortBy from '../SortBy/SortBy.tsx';
 
 const Home = () => {
-  const [latestReleases, setLatestReleases] = useState(false);
-  const [older, setOlder] = useState(false);
+  const [filterByValue, setFilterByValue] = useState(''); // valor inicial
   const [sortByValue, setSortByValue] = useState('popularity.desc'); // valor inicial
 
 
-  const onLatestReleasesClick = () => {
-    //setLatestReleases(!latestReleases);
-    setLatestReleases((prevState) => !prevState);
+  const onChangeFilterBy = (selectedFilterValue: string) => {
+    setFilterByValue(selectedFilterValue);
 
-  }
-
-  const onOlderClick = () => {
-    //setOlder(!older);
-    setOlder((prevState) => !prevState);
   }
 
   const onChangeSortBy = (selectedValue: string) => {
@@ -34,8 +27,7 @@ const Home = () => {
     <>
       <div>
       <Header
-  onLatestReleasesClick={onLatestReleasesClick}
-  onOlderClick={onOlderClick}
+  onChangeFilterBy={onChangeFilterBy}
   onChangeSortBy={onChangeSortBy}
     />
       </div>
@@ -44,15 +36,15 @@ const Home = () => {
         <img src = {posterHome} className= 'posterHome' alt = 'poster'/>
         <div className='title-container'>
           <h1 className="poster-title">
-          {latestReleases
-              ? 'Your Favorite Documentaries From 2020 to 2023'
-              : 'Uncover Reality, One Film at a Time...'}
+          {/*latestReleases
+              ? 'Your Favorite Documentaries From 2020 to 2023'*/}
+              'Uncover Reality, One Film at a Time...'
           </h1>
         </div>
       </div>
 
       <div>
-        <MovieList latestReleases={latestReleases} older={older} sortByValue={sortByValue}/>
+        <MovieList filterByValue={filterByValue} sortByValue={sortByValue}/>
       </div>
     </>
   );
