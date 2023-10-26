@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/moviesRequest';
 import '../Home/Home.css';
 import Pagination from '../Pagination/Pagination';
+import { Link } from 'react-router-dom';
 
 
 const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sortByValue: string }) => {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
+  //movies representa el estado y setMovies el cambio de estado
   const [movies, setMovies] = useState<Movie[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   
@@ -28,6 +30,7 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
     requestMovies(apiUrl, options)//Llamamos a la promesa requestMovies para que muestre la data.
       .then((data) => {
         setMovies(data.results);
+        console.log(data.results)
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -46,13 +49,13 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
           {/*Recorremos el arreglo movies y creamos una tarjeta con link, imagen y texto para cada una*/}
           {movies.map((movie: Movie, i: number) => (
             <div className='movie-box' key={i}>
-              <a href='#' className='link-movie'>
+              <Link to={`/movie/${movie.id}`} className='link-movie'>
                 <img
                   className='movie-img'
                   src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}
                   alt={movie.original_title}
                 />
-              </a>
+              </Link>
               <div className='poster-text'>
                 <p className='movie-title'>{movie.original_title}</p>
                 <p className='movie-date'>{new Date(movie.release_date).getFullYear()}

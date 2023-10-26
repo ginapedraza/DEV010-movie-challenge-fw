@@ -11,6 +11,7 @@ export type Movie = {
   poster_path: string;
   release_date: string;
   vote_count: number;
+  vote_average: number;
 };
 
 //Definimos la respuesta de la Api que nos dará un arreglo de objetos tipo Movie (definido anteriormente)
@@ -29,6 +30,7 @@ export const buildMovieApiUrl = (page: number, filterByValue: string, sortByValu
 export const requestMovies = (url: string, options: RequestInit): Promise<ApiResponse>=> {
   return fetch(url, options)
     .then(async (res) => {
+      
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }

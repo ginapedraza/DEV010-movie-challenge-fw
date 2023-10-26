@@ -12,7 +12,7 @@ const App = () => {
       errorElement: <ErrorPage />,
       children: [
         {
-          path: '/movie',
+          path: '/movie/:movie_id',
           element: <MovieDetails />
         },
       ]
