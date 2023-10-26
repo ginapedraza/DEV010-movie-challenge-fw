@@ -15,7 +15,9 @@ jest.mock('../../requests/moviesRequest', () => {
 
 describe('MovieList Component', () => {
   it('renders a list of movies', async () => {
-    render(<MovieList latestReleases={false}/>);
+    const filterByValue = ''
+    const sortByValue = 'popularity.desc'
+    render(<MovieList filterByValue={filterByValue} sortByValue={sortByValue}/>);
 
     // Espera a que las películas se carguen (puedes personalizar según tu lógica de carga)
     await waitFor(() => screen.getByText('Duell am Abgrund'));

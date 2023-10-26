@@ -17,7 +17,7 @@ const MovieFilter: React.FC<MovieFilterProps> = ({ onChangeFilterBy}) => {
   return (
     <>
     <div className='date-filter-wrapper'>
-    <select className= 'sort-by' name='filter-by' id='filter' onChange={handleFilterByChange} value={filterByValue}>
+    <select className= 'sort-by' name='filter-by' data-testid='filter' onChange={handleFilterByChange} value={filterByValue}>
     <option value=''> Filter By Release Date</option>
         <option value='primary_release_date.gte=2019-12-31&primary_release_date.lte=2023-12-31'>Latest Releases</option>
         <option value='primary_release_date.gte=2010-12-31&primary_release_date.lte=2020-12-31'>Last Decade</option>

@@ -19,7 +19,7 @@ const SortBy: React.FC<SortByProps> = ({ onChangeSortBy }) => {
     return (
       <>
       <div className='sort-by-wrapper'>
-      <select className= 'sort-by' name='sort-by' id='sort' onChange={handleSortByChange} value={sortByValue}>
+      <select className= 'sort-by' name='sort-by' data-testid='sort' onChange={handleSortByChange} value={sortByValue}>
         <option value=''> Sort By</option>
         <option value='vote_average.desc'>Ratings ↓</option>
         <option value='vote_average.asc'>Ratings ↑</option>
