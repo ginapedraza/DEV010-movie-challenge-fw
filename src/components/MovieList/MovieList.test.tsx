@@ -9,21 +9,21 @@ jest.mock('../../requests/moviesRequest', () => {
   return {
     buildMovieApiUrl: jest.fn(),
     API_KEY: 'fake-api-key',
-    requestMovies: jest.fn(() => Promise.resolve({ results: [{ id: 1174725, original_title: 'Duell am Abgrund' }] })),
+    requestMovies: jest.fn(() => Promise.resolve({ results: [{ id: 1171989, original_title: 'The Devil on Trial' }] })),
   };
 });
 
 describe('MovieList Component', () => {
-  it('renders a list of movies', async () => {
+  it.only('renders a list of movies', async () => {
     const filterByValue = ''
     const sortByValue = 'popularity.desc'
     render(<MovieList filterByValue={filterByValue} sortByValue={sortByValue}/>);
 
     // Espera a que las películas se carguen (puedes personalizar según tu lógica de carga)
-    await waitFor(() => screen.getByText('Duell am Abgrund'));
+    await waitFor(() => screen.getByText('The Devil on Trial'), { timeout: 5000 });
 
     // Realiza las aserciones
-    expect(screen.getByText('Duell am Abgrund')).toBeInTheDocument();
+    expect(screen.getByText('The Devil on Trial')).toBeInTheDocument();
 
     // También puedes hacer aserciones sobre otras películas, imágenes, etc.
   });

@@ -47,9 +47,9 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
         {/*Agregamos el contenedor de las tarjetas*/}
         <div className='movie-cards'>
           {/*Recorremos el arreglo movies y creamos una tarjeta con link, imagen y texto para cada una*/}
-          {movies.map((movie: Movie, i: number) => (
-            <div className='movie-box' key={i}>
-              <Link to={`/movie/${movie.id}`} className='link-movie'>
+          {movies.map((movie: Movie) => (
+            <div className='movie-box' key={movie.id}>
+              <Link to={`/movie/${movie.id}`}  className='link-movie'>
                 <img
                   className='movie-img'
                   src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}

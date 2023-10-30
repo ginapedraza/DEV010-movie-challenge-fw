@@ -2,16 +2,13 @@ import { useState, useEffect } from 'react';
 import previousImage from '../../assets/previous-image.png';
 import { useParams } from 'react-router-dom';
 import { Movie, API_KEY } from '../../requests/moviesRequest';
+import { Link } from 'react-router-dom';
 
-const MovieDetails = () => {
-  const { movie_id } = useParams();
-  console.log('movie:id:', movie_id);
-  const [movie, setMovie] = useState<Movie | null>(null);
+const MoviePage = () => {
+  const { movieId } = useParams(); // Usa el hook useParams para obtener el parámetro de la URL llamado "movieId"
+  const [movie, setMovie] = useState<Movie | null>(null); // Inicializa un estado "movie" con valor inicial null
 
   useEffect(() => {
-    // Realiza una solicitud a la API o carga la película desde una lista de películas
-    // Aquí debes usar el `movie_id` para obtener los detalles de la película correspondiente.
-    // Puedes hacer una solicitud a tu API o buscar la película en tu lista.
     const options: RequestInit = { // Opciones para la solicitud HTTP
       method: 'GET',
       headers: {
@@ -19,30 +16,32 @@ const MovieDetails = () => {
         Authorization: API_KEY,
       },
     };
-    // Ejemplo de solicitud a la API (asegúrate de reemplazarlo con tu lógica):
-    fetch(`https://api.themoviedb.org/3/movie/${movie_id}`, options)
-      .then((response) => response.json())
-      .then((data: Movie) => {
-        setMovie(data);
-        console.log('Detalles de la película:', data);
+    
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options) //Url utilizada para que tome el Id del documental
+      .then((response) => response.json()) // Convierte la respuesta a JSON
+      .then((data) => {
+        setMovie(data); // Establece los detalles del documental en el estado
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-  }, [movie_id]);
+  }, [movieId]); // Este efecto se ejecutará cuando "movieId" cambie
 
   if (!movie) {
-    return <p>Cargando...</p>; // Puedes mostrar un indicador de carga mientras se obtienen los datos.
+    console.log('no movie');
+    return <p>Cargando...</p>; // Si "movie" es null, muestra "Cargando..."
+    
   }
   return (
     <>
     <section className= 'container'>
 
       <section className='back-section'>
-        <button className='back'><img src={previousImage} alt='Back to catalogue' />Back to Catalogue</button>
+        <Link to={`/`} className='back'><img src={previousImage} alt='Back to catalogue' />Back to Catalogue</Link>{/* Usando el componente Link para que al hacer click navegue al Home */}
       </section>
 
-      <section className='card'>
+      <section className='card'>{/* Muestra datos de interés del documental seleccionado */}
+        
         <h1 className='movie-title-detail'>{movie.original_title}</h1>
         <section className='inner-card'>
           <a className='score' href= '#'>{movie.vote_average}</a>
@@ -64,4 +63,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default MoviePage;
