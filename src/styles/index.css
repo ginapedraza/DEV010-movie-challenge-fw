@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
   -webkit-text-size-adjust: 100%;
+  
 }
 
 
@@ -10,6 +11,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url('../assets/background-image.png');
+  background-size: cover; /* Cubre completamente la pantalla */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 

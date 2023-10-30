@@ -3,6 +3,10 @@ import previousImage from '../../assets/previous-image.png';
 import { useParams } from 'react-router-dom';
 import { Movie, API_KEY } from '../../requests/moviesRequest';
 import { Link } from 'react-router-dom';
+import '../MoviePage/MoviePage.css';
+//import '../../styles/App.css';
+//import '../../styles/index.css';
+;
 
 const MoviePage = () => {
   const { movieId } = useParams(); // Usa el hook useParams para obtener el parámetro de la URL llamado "movieId"
@@ -21,6 +25,7 @@ const MoviePage = () => {
       .then((response) => response.json()) // Convierte la respuesta a JSON
       .then((data) => {
         setMovie(data); // Establece los detalles del documental en el estado
+        console.log(data);
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -34,30 +39,38 @@ const MoviePage = () => {
   }
   return (
     <>
-    <section className= 'container'>
+    
 
       <section className='back-section'>
-        <Link to={`/`} className='back'><img src={previousImage} alt='Back to catalogue' />Back to Catalogue</Link>{/* Usando el componente Link para que al hacer click navegue al Home */}
+        <Link to={`/`} className='back'><img src={previousImage} alt='Back to catalogue' className='previous-arrow' />Back to Catalogue</Link>{/* Usando el componente Link para que al hacer click navegue al Home */}
       </section>
-
+      <section className= 'container'>
       <section className='card'>{/* Muestra datos de interés del documental seleccionado */}
         
         <h1 className='movie-title-detail'>{movie.original_title}</h1>
         <section className='inner-card'>
-          <a className='score' href= '#'>{movie.vote_average}</a>
-          <p className='date-detail'>{movie.release_date} | {movie.genre_ids} | {movie.vote_count}</p>
+          
+          <p className='score'>{(movie.vote_average)*10}{'%'}</p>
+          <p className='date-detail'>{movie.release_date} | {movie.vote_count} {'votes'}</p>
         </section>
 
-        <h2>Overview</h2>
-        <h3>{movie.overview}</h3>
+        <h2 className='overview-title'>Overview</h2>
+        {movie.overview ? (
+          <p className='overview'>{movie.overview}</p>
+        ) : (
+          <p className='overview'>No Overview provided</p>
+        )}
+        
       </section>
 
-    </section>
+    
 
     <section className='poster-container'>
       <img className='movie-poster' 
       src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}
       alt={movie.original_title}/> 
+    </section>
+
     </section>
     </>
   );
