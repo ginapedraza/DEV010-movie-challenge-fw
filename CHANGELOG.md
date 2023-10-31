@@ -1,3 +1,21 @@
+## <1.0.2> - <2023-10-31>
+
+### Sprint learnings
+
+Uso del BrowserRouter
+Uso de Link
+Uso del Hook useParams()
+
+### Added
+
+Se añadió Link to para ir a la ruta del id de la película
+Se añadió MoviePage para la vista que muestra los detalles de la película
+Se añadieron estilos a la vista
+
+### Changed
+
+Se modificó la configuración de las rutas con BrowserRouter
+
 ## <1.0.1> - <2023-10-25>
 
 ### Sprint learnings

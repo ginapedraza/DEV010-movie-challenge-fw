@@ -50,7 +50,7 @@ const MoviePage = () => {
         <h1 className='movie-title-detail'>{movie.original_title}</h1>
         <section className='inner-card'>
           
-          <p className='score'>{(movie.vote_average)*10}{'%'}</p>
+          <p className='score'>{((movie.vote_average)*10).toFixed(1)}{'%'}</p>
           <p className='date-detail'>{movie.release_date} | {movie.vote_count} {'votes'}</p>
         </section>
 
