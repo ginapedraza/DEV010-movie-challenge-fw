@@ -1,16 +1,25 @@
 import { useState, useEffect } from 'react';
 import previousImage from '../../assets/previous-image.png';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { Movie, API_KEY } from '../../requests/moviesRequest';
 import { Link } from 'react-router-dom';
 import '../MoviePage/MoviePage.css';
 //import '../../styles/App.css';
 //import '../../styles/index.css';
-;
 
 const MoviePage = () => {
   const { movieId } = useParams(); // Usa el hook useParams para obtener el parámetro de la URL llamado "movieId"
   const [movie, setMovie] = useState<Movie | null>(null); // Inicializa un estado "movie" con valor inicial null
+  
+  // Obtener los filtros y sort de la URL de MovieList
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  
+  // Obtén los valores de filtro y orden de los parámetros de la URL
+  const filterByValue = queryParams.get('filter');
+  const sortByValue = queryParams.get('sort');
+
+  const backToCatalogueLink = `/?filter=${filterByValue}&sort=${sortByValue}`; //Esto aún no sirve para mantener los filtros
 
   useEffect(() => {
     const options: RequestInit = { // Opciones para la solicitud HTTP
@@ -42,7 +51,7 @@ const MoviePage = () => {
     
 
       <section className='back-section'>
-        <Link to={`/`} className='back'><img src={previousImage} alt='Back to catalogue' className='previous-arrow' />Back to Catalogue</Link>{/* Usando el componente Link para que al hacer click navegue al Home */}
+        <Link to={backToCatalogueLink} className='back'><img src={previousImage} alt='Back to catalogue' className='previous-arrow' />Back to Catalogue</Link>{/* Usando el componente Link para que al hacer click navegue al Home */}
       </section>
       <section className= 'container'>
       <section className='card'>{/* Muestra datos de interés del documental seleccionado */}

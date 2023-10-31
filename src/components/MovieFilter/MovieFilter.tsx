@@ -11,14 +11,14 @@ const MovieFilter: React.FC<MovieFilterProps> = ({ onChangeFilterBy}) => {
     const selectedFilterValue = event.target.value; //Toma el valor del option seleccionado
     setFilterByValue(selectedFilterValue);
     onChangeFilterBy(selectedFilterValue);
-        console.log('Filter:', selectedFilterValue);
+      
 
   };
   return (
     <>
     <div className='date-filter-wrapper'>
     <select className= 'sort-by' name='filter-by' data-testid='filter' onChange={handleFilterByChange} value={filterByValue}>
-    <option value=''> Filter By Release Date</option>
+    <option value=''>Filter By Release Date</option>
         <option value='primary_release_date.gte=2019-12-31&primary_release_date.lte=2023-12-31'>Latest Releases</option>
         <option value='primary_release_date.gte=2010-12-31&primary_release_date.lte=2020-12-31'>Last Decade</option>
         <option value='primary_release_date.gte=2000-12-31&primary_release_date.lte=2009-12-31'>2000s</option>

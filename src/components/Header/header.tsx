@@ -4,17 +4,24 @@ import '../Home/Home.css';
 import MovieFilter from '../MovieFilter/MovieFilter';
 import SortBy from '../SortBy/SortBy';
 import './header.css';
+//import { Link } from 'react-router-dom';
+//import { useState } from 'react';
 
 interface HeaderProps {
   onChangeFilterBy: (filter: string) => void;
   onChangeSortBy: (sortBy: string)=> void;
+
 }
 
-const Header: React.FC<HeaderProps> = ({ onChangeFilterBy, onChangeSortBy }) => {
+const Header: React.FC<HeaderProps> = ({ onChangeFilterBy, onChangeSortBy}) => {
+
+
   return (
     <header className='header'>
       <div className='header-container'>
+      
         <img src={docuPulseLogo} className='logo' />
+      
         <div className='dropDown-button'>
           <MovieFilter onChangeFilterBy={onChangeFilterBy} />
         </div>

@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 
 const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sortByValue: string }) => {
+
+  
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
   //movies representa el estado y setMovies el cambio de estado
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -48,8 +50,10 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
         <div className='movie-cards'>
           {/*Recorremos el arreglo movies y creamos una tarjeta con link, imagen y texto para cada una*/}
           {movies.map((movie: Movie) => (
+
             <div className='movie-box' key={movie.id}>
-              <Link to={`/movie/${movie.id}`}  className='link-movie'>
+
+              <Link to={`/movie/${movie.id}?filter=${filterByValue}&sort=${sortByValue}`}  className='link-movie'>{/*Probando obtener las opciones de filter y sort seleccionadas, aun no sirve para mantenerls*/}
                 <img
                   className='movie-img'
                   src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}

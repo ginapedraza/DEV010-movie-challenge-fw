@@ -21,7 +21,7 @@
   z-index: 1; /* Coloca el título sobre la imagen */
   color: rgba(255, 255, 255, 0.4);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 30px;
+  font-size: 45px;
 }
 
   .full-container {
@@ -96,7 +96,7 @@
   .movie-date {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #2D132C;
-    margin: 0px;
+    margin: 5px;
   }
 
   .movie-title {
