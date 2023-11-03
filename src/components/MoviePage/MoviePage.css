@@ -1,4 +1,6 @@
-
+.logo-container {
+margin-left: 40px;
+}
 .container {
     background-color: #200C20;
     padding: 70px;

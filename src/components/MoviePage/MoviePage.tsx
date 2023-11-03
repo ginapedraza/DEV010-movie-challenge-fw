@@ -4,6 +4,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { Movie, API_KEY } from '../../requests/moviesRequest';
 import { Link } from 'react-router-dom';
 import '../MoviePage/MoviePage.css';
+import docuPulseLogo from '../../assets/logo-web-docuPulse-noBackground.png';
 //import '../../styles/App.css';
 //import '../../styles/index.css';
 
@@ -48,6 +49,9 @@ const MoviePage = () => {
   }
   return (
     <>
+    <section className='logo-container'>
+    <img src={docuPulseLogo} className='logo' />
+    </section>
     
 
       <section className='back-section'>

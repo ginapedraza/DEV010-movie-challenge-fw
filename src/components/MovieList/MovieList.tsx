@@ -57,6 +57,9 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
                 <img
                   className='movie-img'
                   src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}
+                  onError={(e) => {
+                    e.currentTarget.src = 'src/assets/no-poster.png';
+                  }}
                   alt={movie.original_title}
                 />
               </Link>
