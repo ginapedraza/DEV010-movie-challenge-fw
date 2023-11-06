@@ -10,4 +10,13 @@ module.exports = {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '^.+\\.(css|png|jpg|jpeg)$': '<rootDir>/src/__mocks__/file-mock.cjs',
   },
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.tsx'],
+  coveragePathIgnorePatterns: ['/src/requests/moviesRequest.ts',
+'/src/components/Error',
+'src/components/Home',
+'src/main.tsx',
+'src/App.tsx',
+'src/components/Header'
+],
 };

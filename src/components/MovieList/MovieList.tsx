@@ -53,13 +53,10 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
 
             <div className='movie-box' key={movie.id}>
 
-              <Link to={`/movie/${movie.id}?filter=${filterByValue}&sort=${sortByValue}`}  className='link-movie'>{/*Probando obtener las opciones de filter y sort seleccionadas, aun no sirve para mantenerls*/}
+              <Link to={`/movie/${movie.id}`}  className='link-movie'>{/*Probando obtener las opciones de filter y sort seleccionadas agregando esto ?filter=${filterByValue}&sort=${sortByValue} aun no sirve para mantenerls*/}
                 <img
                   className='movie-img'
-                  src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`}
-                  onError={(e) => {
-                    e.currentTarget.src = 'src/assets/no-poster.png';
-                  }}
+                  src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`} 
                   alt={movie.original_title}
                 />
               </Link>
