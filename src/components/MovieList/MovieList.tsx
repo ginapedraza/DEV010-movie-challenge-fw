@@ -12,11 +12,13 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
   //movies representa el estado y setMovies el cambio de estado
   const [movies, setMovies] = useState<Movie[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  
+
 
 
   //Usamos useEffect para ejecutar efectos de componentes funcionales externos
   useEffect(() => {
+    console.log('filterByValue:', filterByValue);
+    console.log('sortByValue:', sortByValue);
  
     //Primer parámetro Configuraciones
     const apiUrl = buildMovieApiUrl(currentPage, filterByValue, sortByValue);
@@ -56,7 +58,7 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
               <Link to={`/movie/${movie.id}`}  className='link-movie'>{/*Probando obtener las opciones de filter y sort seleccionadas agregando esto ?filter=${filterByValue}&sort=${sortByValue} aun no sirve para mantenerls*/}
                 <img
                   className='movie-img'
-                  src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`} 
+                  src={movie.poster_path !== null ? `https://image.tmdb.org/t/p/w154/${movie.poster_path}` : 'src/assets/no-poster.png'} 
                   alt={movie.original_title}
                 />
               </Link>

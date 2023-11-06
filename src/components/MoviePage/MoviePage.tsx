@@ -11,20 +11,26 @@ import docuPulseLogo from '../../assets/logo-web-docuPulse-noBackground.png';
 const MoviePage = () => {
   const { movieId } = useParams(); // Usa el hook useParams para obtener el parámetro de la URL llamado "movieId"
   const [movie, setMovie] = useState<Movie | null>(null); // Inicializa un estado "movie" con valor inicial null
-  
+
+//const { movieId, filterByValue, sortByValue } = useParams();
+
+  //const navigate = useNavigate();
   // Obtener los filtros y sort de la URL de MovieList
- // const location = useLocation();
- // const queryParams = new URLSearchParams(location.search);
+ //const location = useLocation();
+// const queryParams = new URLSearchParams(location.search);
   
   // Obtén los valores de filtro y orden de los parámetros de la URL
- // const filterByValue = queryParams.get('filter');
- // const sortByValue = queryParams.get('sort');
+ //const filterByValue = queryParams.get('filter') || '';
+ //const sortByValue = queryParams.get('sort') || '';
 
   //const backToCatalogueLink = `/?filter=${filterByValue}&sort=${sortByValue}`; //Agregando esto ?filter=${filterByValue}&sort=${sortByValue} no sirve para mantener los filtros
+  //const handleBackToCatalogue = `/?filter=${filterByValue}&sort=${sortByValue}`;
 
 
   
   useEffect(() => {
+    //console.log('filterByValue:', filterByValue);
+    //console.log('sortByValue:', sortByValue);
     const options: RequestInit = { // Opciones para la solicitud HTTP
       method: 'GET',
       headers: {
@@ -42,7 +48,9 @@ const MoviePage = () => {
       .catch((error) => {
         console.error('Error:', error);
       });
-  }, [movieId] ); // Este efecto se ejecutará cuando "movieId" cambie
+  }, [movieId]); // Este efecto se ejecutará cuando "movieId" cambie
+
+
 
   if (!movie) {
     console.log('no movie');
