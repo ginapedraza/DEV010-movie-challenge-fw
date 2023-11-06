@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
+                <span class="strong">95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/18</span>
+                <span class='fraction'>19/20</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
+                <span class="strong">95% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/18</span>
+                <span class='fraction'>19/20</span>
             </div>
         
             
@@ -141,30 +141,36 @@
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,9 +190,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,41 +223,45 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect } from 'react';
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, useEffect } from 'react';
 import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/moviesRequest';
 import '../Home/Home.css';
 import Pagination from '../Pagination/Pagination';
 import { Link } from 'react-router-dom';
+//import { useFilterSort } from '../filterAndSort/FilterSortContext.tsx';
 &nbsp;
+interface MovieListProps {
+  filterByValue: string;
+  sortByValue: string;
+}
 &nbsp;
-const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sortByValue: string }) =&gt; {
-&nbsp;
-  
+const MovieList: React.FC&lt;MovieListProps&gt; = ({ filterByValue, sortByValue }) =&gt; {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
-  //movies representa el estado y setMovies el cambio de estado
+  // movies representa el estado y setMovies el cambio de estado
   const [movies, setMovies] = useState&lt;Movie[]&gt;([]);
   const [currentPage, setCurrentPage] = useState(1);
-  
 &nbsp;
-&nbsp;
-  //Usamos useEffect para ejecutar efectos de componentes funcionales externos
+  // Usamos useEffect para ejecutar efectos de componentes funcionales externos
   useEffect(() =&gt; {
- 
-    //Primer parámetro Configuraciones
+    console.log('filterByValue:', filterByValue);
+    console.log('sortByValue:', sortByValue);
+&nbsp;
+    // Primer parámetro Configuraciones
     const apiUrl = buildMovieApiUrl(currentPage, filterByValue, sortByValue);
-    
-    const options: RequestInit = { // Opciones para la solicitud HTTP
+&nbsp;
+    const options: RequestInit = {
+      // Opciones para la solicitud HTTP
       method: 'GET',
       headers: {
         accept: 'application/json',
         Authorization: API_KEY,
       },
     };
-    
-    requestMovies(apiUrl, options)//Llamamos a la promesa requestMovies para que muestre la data.
+&nbsp;
+    requestMovies(apiUrl, options) // Llamamos a la promesa requestMovies para que muestre la data.
       .then((data) =&gt; {
         setMovies(data.results);
-        console.log(data.results)
+        console.log(data.results);
       })
       .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
 <span class="cstat-no" title="statement not covered" >        console.error('Error:', error);</span>
@@ -261,37 +269,35 @@ const MovieList = ({ filterByValue, sortByValue }: { filterByValue: string, sort
     // Segundo parámetro Dependencias es currentPage (se va a ejecutar lo anterior cada vez que cambie currentPage), filter y sort
   }, [currentPage, filterByValue, sortByValue]);
 &nbsp;
-  
   // Renderizamos el componente
   return (
     &lt;&gt;
-      {/*Agregamos el contenedor principal*/}
-      &lt;div className='full-container'&gt;
-        {/*Agregamos el contenedor de las tarjetas*/}
-        &lt;div className='movie-cards'&gt;
-          {/*Recorremos el arreglo movies y creamos una tarjeta con link, imagen y texto para cada una*/}
+      {/* Agregamos el contenedor principal */}
+      &lt;div className="full-container"&gt;
+        {/* Agregamos el contenedor de las tarjetas */}
+        &lt;div className="movie-cards"&gt;
+          {/* Recorremos el arreglo movies y creamos una tarjeta con link, imagen y texto para cada una */}
           {movies.map((movie: Movie) =&gt; (
-&nbsp;
-            &lt;div className='movie-box' key={movie.id}&gt;
-&nbsp;
-              &lt;Link to={`/movie/${movie.id}`}  className='link-movie'&gt;{/*Probando obtener las opciones de filter y sort seleccionadas agregando esto ?filter=${filterByValue}&amp;sort=${sortByValue} aun no sirve para mantenerls*/}
+            &lt;div className="movie-box" key={movie.id}&gt;
+              &lt;Link to={`/movie/${movie.id}`} className="link-movie"&gt;
                 &lt;img
-                  className='movie-img'
-                  src={movie.poster_path !== null ? `https://image.tmdb.org/t/p/w154/${movie.poster_path}` : 'src/assets/no-poster.png'} 
+                  className="movie-img"
+                  src={
+                    movie.poster_path !== null
+                      ? `https://image.tmdb.org/t/p/w154/${movie.poster_path}`
+                      : 'src/assets/no-poster.png'
+                  }
                   alt={movie.original_title}
                 /&gt;
               &lt;/Link&gt;
-              &lt;div className='poster-text'&gt;
-                &lt;p className='movie-title'&gt;{movie.original_title}&lt;/p&gt;
-                &lt;p className='movie-date'&gt;{new Date(movie.release_date).getFullYear()}
-                &lt;/p&gt;
+              &lt;div className="poster-text"&gt;
+                &lt;p className="movie-title"&gt;{movie.original_title}&lt;/p&gt;
+                &lt;p className="movie-date"&gt;{new Date(movie.release_date).getFullYear()}&lt;/p&gt;
               &lt;/div&gt;
             &lt;/div&gt;
           ))}
         &lt;/div&gt;
-        &lt;Pagination page= { currentPage } setCurrentPage= { setCurrentPage } /&gt;
-  
-  
+        &lt;Pagination page={currentPage} setCurrentPage={setCurrentPage} /&gt;
       &lt;/div&gt;
     &lt;/&gt;
   );
@@ -304,7 +310,7 @@ export default MovieList;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-06T17:47:27.312Z
+                at 2023-11-06T20:49:17.895Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -17,6 +17,7 @@ module.exports = {
 'src/components/Home',
 'src/main.tsx',
 'src/App.tsx',
-'src/components/Header'
+'src/components/Header',
+'src/components/filterAndSort'
 ],
 };
