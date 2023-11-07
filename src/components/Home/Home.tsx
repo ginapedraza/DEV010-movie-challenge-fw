@@ -20,25 +20,25 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <div>
+      <section>
         <Header
           onChangeFilterBy={onChangeFilterBy}
           onChangeSortBy={onChangeSortBy}
         />
-      </div>
+      </section>
 
-      <div className='poster-container'>
+      <section className='poster-container'>
         <img src={posterHome} className='posterHome' alt='poster' />
-        <div className='title-container'>
+        <section className='title-container'>
           <h1 className="poster-title">
             Uncover Reality, One Film at a Time...
           </h1>
-        </div>
-      </div>
+        </section>
+      </section>
 
-      <div>
+      <section>
         <MovieList filterByValue={filterByValue} sortByValue={sortByValue} />
-      </div>
+      </section>
     </>
   );
 };

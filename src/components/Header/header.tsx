@@ -18,18 +18,18 @@ const Header: React.FC<HeaderProps> = ({ onChangeFilterBy, onChangeSortBy}) => {
 
   return (
     <header className='header'>
-      <div className='header-container'>
+      <section className='header-container'>
       
         <img src={docuPulseLogo} className='logo' />
       
-        <div className='dropDown-button'>
+        <section className='dropDown-button'>
           <MovieFilter onChangeFilterBy={onChangeFilterBy} />
-        </div>
-        <div className='dropDown-button'>
+        </section>
+        <section className='dropDown-button'>
           <SortBy onChangeSortBy={onChangeSortBy}/>
 
-    </div>
-        </div>
+    </section>
+        </section>
     </header>
   );
 };

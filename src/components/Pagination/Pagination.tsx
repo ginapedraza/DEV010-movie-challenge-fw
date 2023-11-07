@@ -36,7 +36,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, setCurrentPage }) => {
   // Renderizamos el componente
   return (
     <>
-      <div className="centered-container">
+      <section className="centered-container">
         {/* Botón para avanzar a la siguiente página */}
         {page > 1 && (
           <>
@@ -53,7 +53,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, setCurrentPage }) => {
           <img src = {nextImage} className= 'nextImage' alt = 'Arrow right' /></button>
         <button className= 'button-next' onClick={handleLastPage}>
           <img src = {lastPage} className= 'nextImage' alt = 'Last Page' /></button>
-      </div>
+      </section>
     </>
   );
     

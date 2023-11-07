@@ -48,12 +48,12 @@ const MovieList: React.FC<MovieListProps> = ({ filterByValue, sortByValue }) => 
   return (
     <>
       {/* Agregamos el contenedor principal */}
-      <div className="full-container">
+      <section className="full-container">
         {/* Agregamos el contenedor de las tarjetas */}
-        <div className="movie-cards">
+        <section className="movie-cards">
           {/* Recorremos el arreglo movies y creamos una tarjeta con link, imagen y texto para cada una */}
           {movies.map((movie: Movie) => (
-            <div className="movie-box" key={movie.id}>
+            <section className="movie-box" key={movie.id}>
               <Link to={`/movie/${movie.id}`} className="link-movie">
                 <img
                   className="movie-img"
@@ -65,15 +65,15 @@ const MovieList: React.FC<MovieListProps> = ({ filterByValue, sortByValue }) => 
                   alt={movie.original_title}
                 />
               </Link>
-              <div className="poster-text">
+              <section className="poster-text">
                 <p className="movie-title">{movie.original_title}</p>
                 <p className="movie-date">{new Date(movie.release_date).getFullYear()}</p>
-              </div>
-            </div>
+              </section>
+            </section>
           ))}
-        </div>
+        </section>
         <Pagination page={currentPage} setCurrentPage={setCurrentPage} />
-      </div>
+      </section>
     </>
   );
 };

@@ -6,7 +6,7 @@ import { FilterSortProvider } from './components/filterAndSort/FilterSortContext
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <section className="App">
       <FilterSortProvider>
         <Router>
           <Routes>
@@ -15,7 +15,7 @@ const App: React.FC = () => {
           </Routes>
         </Router>
       </FilterSortProvider>
-    </div>
+    </section>
   );
 }
 
