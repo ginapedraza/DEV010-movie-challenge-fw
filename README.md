@@ -1,7 +1,7 @@
 # 🎬 DocuPulse - A Documentary Movies Catalog
 
 <p align="center">
-<img src="logo-web-docuPulse-noBackground.png" alt="LOGO">
+<img src="./src/assets/logo-web-docuPulse-noBackground.png" alt="LOGO">
 </p>
 
 Welcome to **DocuPulse**, your go-to platform for exploring a vast collection of documentary films! This web application harnesses the power of **The Movie Database API V3** to bring you a curated selection of documentary movies. 🌟
