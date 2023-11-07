@@ -1,7 +1,7 @@
 # 🎬 DocuPulse - A Documentary Movies Catalog
 
 <p align="center">
-<img src="logo-web-docuPulse-noBackground.png" alt="LOGO">
+<img src="./src/assets/logo-web-docuPulse-noBackground.png" alt="LOGO" width="300" height="150">
 </p>
 
 Welcome to **DocuPulse**, your go-to platform for exploring a vast collection of documentary films! This web application harnesses the power of **The Movie Database API V3** to bring you a curated selection of documentary movies. 🌟
@@ -40,7 +40,7 @@ The creation of **DocuPulse** involved the following steps:
 
 1. **High-Fidelity Prototypes**: Detailed prototypes were designed to shape the application's user interface. Initially, the prototypes included language-based filtering. However, after careful consideration, we modified the design to prioritize filtering by release date, providing a more engaging user experience.
 
-![Prototipo de alta fidelidad](prototipo-alta-fidelidad-1.png)
-![Prototipo de alta fidelidad](prototipo-alta-fidelidad-2.png)
+![Prototipo de alta fidelidad](src/assets/prototipo-alta-fidelidad-1.png)
+![Prototipo de alta fidelidad](src/assets/prototipo-alta-fidelidad-2.png)
 
 2. **Development and Design**: The application was constructed based on the prototypes, ensuring an appealing and user-friendly design.
