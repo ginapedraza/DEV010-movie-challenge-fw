@@ -40,7 +40,6 @@ The creation of **DocuPulse** involved the following steps:
 
 1. **High-Fidelity Prototypes**: Detailed prototypes were designed to shape the application's user interface. Initially, the prototypes included language-based filtering. However, after careful consideration, we modified the design to prioritize filtering by release date, providing a more engaging user experience.
 
-![Prototipo de alta fidelidad](src/assets/prototipo-alta-fidelidad-1.png)
-![Prototipo de alta fidelidad](src/assets/prototipo-alta-fidelidad-2.png)
+![Prototipo de alta fidelidad](src/assets/prototipos.png)
 
 2. **Development and Design**: The application was constructed based on the prototypes, ensuring an appealing and user-friendly design.
