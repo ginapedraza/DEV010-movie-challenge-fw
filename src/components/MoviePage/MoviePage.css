@@ -82,3 +82,67 @@ margin-bottom: 60px;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5; 
 }
+
+
+/* Estilos para dispositivos móviles (ancho de pantalla <= 1000px) */
+@media screen and (max-width: 1000px) {
+    .logo-container {
+      margin: 0;
+      display: flex;
+      justify-content: center; /* Centra el contenido horizontalmente */
+      align-items: center; /* Centra el contenido verticalmente */
+    }
+  
+    .container {
+      padding: 20px; /* Reduce el relleno para dispositivos móviles */
+      margin: 0;
+    }
+  
+    .back-section {
+      margin: 0; /* Elimina el margen superior para dispositivos móviles */
+    }
+  
+    .previous-arrow {
+      margin: 0; /* Elimina el margen para dispositivos móviles */
+    }
+  
+    .back {
+      font-size: 12px; /* Reduce el tamaño del texto para dispositivos móviles */
+    }
+  
+    .card {
+      width: 100%; /* Ocupa el ancho completo del contenedor padre */
+    }
+  
+    .movie-title-detail {
+      font-size: 25px; /* Reduce el tamaño del título para dispositivos móviles */
+    }
+  
+    .inner-card {
+      margin-bottom: 20px; /* Reduce el espacio entre elementos */
+    }
+  
+    .score {
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+    }
+  
+    .date-detail {
+      margin-left: 10px; /* Reduce el margen izquierdo */
+      font-size: 14px; /* Reduce el tamaño del texto */
+    }
+  
+    .movie-poster {
+      width: 100%; /* Ocupa el ancho completo del contenedor padre */
+      height: auto; /* Se ajusta automáticamente a la relación de aspecto original */
+    }
+  
+    .overview-title {
+      font-size: 24px; /* Reduce el tamaño del título de descripción */
+    }
+  
+    .overview {
+      font-size: 16px; /* Reduce el tamaño del texto de descripción */
+    }
+  }
