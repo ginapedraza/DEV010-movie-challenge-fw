@@ -69,3 +69,27 @@ select option {
   font-weight: bold;
   
 }
+
+
+/* Estilos para pantallas más pequeñas (max-width: 1000px) */
+@media screen and (max-width: 1000px) {
+  .header {
+    height: 60px; /* Altura reducida en pantallas pequeñas */
+    justify-content: space-between; /* Distribución de elementos a ambos lados del header */
+    padding-left: 10px;
+  }
+
+  .logo {
+    height: 3.3em; /* Reducir el tamaño del logo para pantallas pequeñas */
+  }
+
+  .date-filter {
+    margin-left: 10px; /* Reducir el margen izquierdo */
+    font-size: 10px; /* Reducir el tamaño de fuente */
+  }
+
+  .sort-by {
+    margin-left: 10px; /* Reducir el margen izquierdo */
+    font-size: 10px; /* Reducir el tamaño de fuente */
+  }
+}

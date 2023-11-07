@@ -59,6 +59,44 @@
     
   }
 
+  @media screen and (max-width: 1000px) {
+    .movie-cards {
+      grid-template-columns: repeat(2, 1fr); /* 3 tarjetas por fila en pantallas pequeñas */
+      width: 80%;
+      margin: 0 auto;
+    }
+    
+    .movie-box {
+      width: 100%; /* Ancho completo para ocupar toda la pantalla en pantallas pequeñas */
+      margin: 10px 0; /* Espacio vertical entre tarjetas en pantallas pequeñas */
+    }
+
+    .poster-title {
+      font-size: 15px; /* Ajusta el tamaño de fuente del poster-title para dispositivos móviles */
+      width: 100%;
+      text-align: center;
+    }
+
+    .posterHome {
+      width: 100%; /* Ocupa el ancho completo del contenedor en dispositivos móviles */
+      height: 200px; /* Ajusta la altura máxima según tus preferencias */
+    }
+
+    .movie-img {
+      width: 100%; /* Ocupa el ancho completo del contenedor padre */
+      height: auto; /* Se ajusta automáticamente a la relación de aspecto original */
+      border-radius: 2% 2% 0% 0%;
+    }
+  
+    .poster-text {
+      width: 100%; /* Ocupa el ancho completo del contenedor padre */
+      height: 60px; /* Altura más pequeña para dispositivos móviles */
+      font-size: 0.6em; /* Tamaño de fuente más pequeño */
+      border-radius: 0% 0% 2% 2%;
+      margin-top: 5px; /* Espacio entre el texto y la imagen */
+    }
+  }
+
   .movie-box:hover {
     transform: scale(1.1); /* Agrandar al pasar el mouse */
   }
