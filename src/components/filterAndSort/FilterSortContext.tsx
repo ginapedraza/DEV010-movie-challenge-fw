@@ -7,7 +7,7 @@ type FilterSortContextType = {
   setSortByValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const FilterSortContext = createContext<FilterSortContextType | undefined>(undefined);
+const FilterSortContext = createContext<FilterSortContextType | null>(null);
 
 export const useFilterSort = () => {
     //Esta función se utilizará para acceder al contexto en otros componentes. Utiliza useContext para obtener el valor actual del contexto FilterSortContext
@@ -27,6 +27,7 @@ export const FilterSortProvider: React.FC<FilterSortProviderProps> = ({ children
     //se utiliza el hook useState para definir dos estados: filterByValue y sortByValue, que se inicializan con valores predeterminados. 
   const [filterByValue, setFilterByValue] = useState<string>('');
   const [sortByValue, setSortByValue] = useState<string>('popularity.desc');
+  
 
   return (
     
@@ -37,3 +38,4 @@ export const FilterSortProvider: React.FC<FilterSortProviderProps> = ({ children
     </FilterSortContext.Provider>
   );
 };
+

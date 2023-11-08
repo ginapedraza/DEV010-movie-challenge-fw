@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .logo {
     height: 7em;
     will-change: filter;
@@ -19,6 +21,7 @@
     margin-left: 60px;
     font-size: 20px;
     cursor: pointer;
+    
   }
   .date-filter:hover {
     filter: drop-shadow(0 0 2em #C72C41);
@@ -34,6 +37,7 @@
     font-size: 20px;
     cursor: pointer;
     background-color: transparent;
+    font-family:'Montserrat';
   
     
   }
@@ -49,7 +53,7 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items:center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Montserrat';
      width: 100%;/* Ancho del 100% */
   position: fixed; /* Fija el header en la parte superior */
   z-index: 100; /* Asegura que el header esté encima de otros elementos */
@@ -59,6 +63,7 @@
     display: flex;
     align-items: center;
     width: 95%;
+    
   }
 
 

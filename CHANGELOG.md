@@ -1,3 +1,21 @@
+## <1.0.3> - <2023-11-08>
+
+### Sprint learnings
+
+Uso del createContext, useContext, SomeContext.Provider
+
+### Added
+
+Se añadió Link to para regresar al catálogo
+Se añadió un archivo FilterSortContext para crear el contexto para el filtro y el sort
+Se añadieron estilos responsivos
+Se añadieron tests de la historia 3
+
+### Changed
+
+Se modificaron algunos estilos
+
+
 ## <1.0.2> - <2023-10-31>
 
 ### Sprint learnings

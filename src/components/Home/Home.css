@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .poster-container {
   position: relative;
 }
@@ -12,6 +14,17 @@
 .posterHome {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    
+  }
+  100% {
+    opacity: 1;
+    
+  }
+}
 .poster-title {
   position:absolute;
   top: 50%; /* Alinea el título en la mitad superior del contenedor */
@@ -20,8 +33,9 @@
   transform: translate(-50%, -50%); /* Centra el título tanto vertical como horizontalmente */
   z-index: 1; /* Coloca el título sobre la imagen */
   color: rgba(255, 255, 255, 0.4);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Montserrat';
   font-size: 45px;
+  animation: fadeIn 2s ease-in-out; 
 }
 
   .full-container {
@@ -121,7 +135,8 @@
     width: 180px;
     height: 80px;
     font-size: 0.7em; /* Tamaño de fuente relativo */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Montserrat';
+    
     text-align: center;
     text-overflow: ellipsis;
     justify-content: center;
@@ -132,7 +147,8 @@
 
 
   .movie-date {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Montserrat';
+    font-weight: bold;
     color: #2D132C;
     margin: 5px;
   }
@@ -145,7 +161,7 @@
     background: none;
     color: white;
     border: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Montserrat';
     font-size: 25px;
     outline: none !important;
   }

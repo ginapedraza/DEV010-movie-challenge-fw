@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 :root {
   color-scheme: light dark;
   -webkit-text-size-adjust: 100%;
@@ -13,7 +15,7 @@ body {
   min-height: 100vh;
   background-image: url('../assets/background-image.png');
   background-size: cover; /* Cubre completamente la pantalla */
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Montserrat';
 
 }
 
