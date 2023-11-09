@@ -4,6 +4,7 @@ import { useState } from 'react';
 interface MovieFilterProps {
   onChangeFilterBy: (filter: string) => void;
 }
+
 const MovieFilter: React.FC<MovieFilterProps> = ({ onChangeFilterBy}) => {
   const [filterByValue, setFilterByValue] = useState(''); // valor inicial
 

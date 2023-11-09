@@ -2,6 +2,8 @@
 
 .poster-container {
   position: relative;
+
+  
 }
 
 
@@ -13,7 +15,11 @@
 
 .posterHome {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 100%); /* Ajusta los valores según tus preferencias */
+  mask-size: 100% 100%;
+  mask-position: bottom;
 }
+
 
 @keyframes fadeIn {
   0% {
@@ -36,6 +42,15 @@
   font-family: 'Montserrat';
   font-size: 45px;
   animation: fadeIn 2s ease-in-out; 
+}
+
+.catalogue-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px auto;
+  font-family: 'Montserrat';
+  font-size: 25px;
 }
 
   .full-container {

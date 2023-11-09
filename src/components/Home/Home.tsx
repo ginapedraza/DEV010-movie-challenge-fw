@@ -36,6 +36,7 @@ const Home: React.FC = () => {
         </section>
       </section>
 
+
       <section>
         <MovieList filterByValue={filterByValue} sortByValue={sortByValue} />
       </section>

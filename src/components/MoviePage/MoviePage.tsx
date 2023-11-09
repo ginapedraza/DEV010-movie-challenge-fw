@@ -47,7 +47,7 @@ const MoviePage = () => {
     
 
       <section className='back-section'>
-        <Link to={'/'} className='back'><img src={previousImage} alt='Back to catalogue' className='previous-arrow' />Back to Catalogue</Link>{/* Usando el componente Link para que al hacer click navegue al Home */}
+        <Link to={'/'} className='back'><img src={previousImage} alt='Back to catalog' className='previous-arrow' />Back to Catalogue</Link>{/* Usando el componente Link para que al hacer click navegue al Home */}
       </section>
       <section className= 'container'>
       <section className='card'>{/* Muestra datos de interés del documental seleccionado */}

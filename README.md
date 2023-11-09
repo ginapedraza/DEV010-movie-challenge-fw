@@ -38,7 +38,7 @@ DocuPulse is built using the following technologies:
 
 The creation of **DocuPulse** involved the following steps:
 
-1. **High-Fidelity Prototypes**: Detailed prototypes were designed to shape the application's user interface. Initially, the prototypes included language-based filtering. However, after careful consideration, we modified the design to prioritize filtering by release date, providing a more engaging user experience.
+1. **High-Fidelity Prototypes**: Detailed prototypes were designed to shape the application's user interface. Initially, the prototypes included language-based filtering. However, after careful consideration, the design was modified to prioritize filtering by release date, providing a more engaging user experience.
 
 ![Prototipo de alta fidelidad](src/assets/prototipos.png)
 

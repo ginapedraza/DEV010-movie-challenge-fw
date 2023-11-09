@@ -3,6 +3,7 @@ import { buildMovieApiUrl, API_KEY, requestMovies, Movie } from '../../requests/
 import '../Home/Home.css';
 import Pagination from '../Pagination/Pagination';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 //import { useFilterSort } from '../filterAndSort/FilterSortContext.tsx';
 
 interface MovieListProps {
@@ -73,6 +74,10 @@ const MovieList: React.FC<MovieListProps> = ({ filterByValue, sortByValue }) => 
           ))}
         </section>
         <Pagination page={currentPage} setCurrentPage={setCurrentPage} />
+      </section>
+
+      <section>
+        <Footer/>
       </section>
     </>
   );
