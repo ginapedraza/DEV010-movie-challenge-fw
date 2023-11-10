@@ -1,16 +1,20 @@
 import { useState } from 'react';
 
-// Props que utilizará el filtro: la función que maneja el estado y cambia el valor del filter
+// Interfaz para definir las Props que utilizará el filtro: la función que maneja el estado y cambia el valor del filter
 interface MovieFilterProps {
-  onChangeFilterBy: (filter: string) => void;
+  onChangeFilterBy: (filter: string) => void; // Se agrega el void para decirle que no devuelve nada
 }
 
 const MovieFilter: React.FC<MovieFilterProps> = ({ onChangeFilterBy}) => {
-  const [filterByValue, setFilterByValue] = useState(''); // valor inicial
+  const [filterByValue, setFilterByValue] = useState(''); // Declara un estado local filterByValue con un valor inicial de cadena vacía.
 
+  // Declara una función handleFilterByChange que se ejecuta cuando cambia el valor del select (Manejador de eventos).
   const handleFilterByChange = (event:React.ChangeEvent<HTMLSelectElement>) => {
     const selectedFilterValue = event.target.value; //Toma el valor del option seleccionado
+
+    //setFIlterByValue actualiza el estado local de filterByValue con el valor seleccionado
     setFilterByValue(selectedFilterValue);
+    //Llama a la función que cambia el estado pasandole el valor seleccionado
     onChangeFilterBy(selectedFilterValue);
       
 

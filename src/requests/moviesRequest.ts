@@ -28,18 +28,21 @@ export const buildMovieApiUrl = (page: number, filterByValue: string, sortByValu
 
 //Creamos una promesa para hacer la solicitud HTTP con fetch y obtenerla manejando los errores
 export const requestMovies = (url: string, options: RequestInit): Promise<ApiResponse>=> {
+  // Utiliza la función fetch para realizar una solicitud HTTP con la URL y las opciones proporcionadas.
   return fetch(url, options)
     .then(async (res) => {
       
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
+      // Si la respuesta es exitosa, convierte el cuerpo de la respuesta a formato JSON (objeto Javascript) para ser leído por la aplicación
+            const data = await res.json();
       //Indicamos que la data es la ApiResponse de las peliculas
-      const data = await res.json();
       return data as ApiResponse;
     })
     .catch((error) => {
       console.error('Error:', error);
+      // Relanza el error para que pueda ser manejado por el código que llamó a esta función.
       throw error;
     });
 };

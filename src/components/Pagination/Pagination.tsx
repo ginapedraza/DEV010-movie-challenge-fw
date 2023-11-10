@@ -6,23 +6,22 @@ import lastPage from '../../assets/last-page.png';
 import '../Home/Home.css';
 
 interface PaginationProps {
- page: number; 
-  /* eslint-disable-no-unused-vars */
+  currentPage: number;
   setCurrentPage: Dispatch<SetStateAction<number>>;
   
 }
 
-const Pagination: React.FC<PaginationProps> = ({ page, setCurrentPage }) => {
+const Pagination: React.FC<PaginationProps> = ({ currentPage, setCurrentPage }) => {
   // Acá usamos el Hook useState para establecer los estados de movies y de currentPage
 
   //Funcion para manejar el cambio de página
   const handleNextPage = () => {
     // Incrementa el número de página
-    setCurrentPage(page + 1);
+    setCurrentPage(currentPage + 1);
   };
   const handlePreviousPage = () => {
     // Incrementa el número de página
-    setCurrentPage(page - 1);
+    setCurrentPage(currentPage - 1);
   };
   const handleLastPage = () => {
     setCurrentPage(500);
@@ -38,7 +37,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, setCurrentPage }) => {
     <>
       <section className="centered-container">
         {/* Botón para avanzar a la siguiente página */}
-        {page > 1 && (
+        {currentPage > 1 && (
           <>
             <button className= 'button-next' onClick={handleFirstPage}>
               <img src = {firstPage} className= 'previousImage' alt = 'First Page' />

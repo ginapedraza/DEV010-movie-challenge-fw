@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import MoviePage from './components/MoviePage/MoviePage';
-import { FilterSortProvider } from './components/filterAndSort/FilterSortContext'; // Importa el contexto
-//import ErrorPage from './components/Error/error-page';
+import { FilterSortProvider } from './components/FilterAndSort/FilterSortContext'; // Importa el contexto
+
 
 const App: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <FilterSortProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />}/>
             <Route path='/movie/:movieId' element={<MoviePage />} />
           </Routes>
         </Router>

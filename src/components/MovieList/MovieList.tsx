@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 //import { useFilterSort } from '../filterAndSort/FilterSortContext.tsx';
 
+
+//Interfaz para definir los tipos de las props
 interface MovieListProps {
   filterByValue: string;
   sortByValue: string;
@@ -17,12 +19,12 @@ const MovieList: React.FC<MovieListProps> = ({ filterByValue, sortByValue }) => 
   const [movies, setMovies] = useState<Movie[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Usamos useEffect para ejecutar efectos de componentes funcionales externos
+  // Usamos el hook useEffect para ejecutar efectos de componentes funcionales externos
   useEffect(() => {
     console.log('filterByValue:', filterByValue);
     console.log('sortByValue:', sortByValue);
 
-    // Primer parámetro Configuraciones
+    // Primer parámetro Configuraciones, la función que construye la url que vamos a necesitar
     const apiUrl = buildMovieApiUrl(currentPage, filterByValue, sortByValue);
 
     const options: RequestInit = {
@@ -73,7 +75,7 @@ const MovieList: React.FC<MovieListProps> = ({ filterByValue, sortByValue }) => 
             </section>
           ))}
         </section>
-        <Pagination page={currentPage} setCurrentPage={setCurrentPage} />
+        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </section>
 
       <section>

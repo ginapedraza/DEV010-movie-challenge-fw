@@ -23,6 +23,7 @@ type FilterSortProviderProps = { /*Define un tipo FilterSortProviderProps que de
   children: ReactNode;
 };
 
+//Proveedor del contexto
 export const FilterSortProvider: React.FC<FilterSortProviderProps> = ({ children }) => {
     //se utiliza el hook useState para definir dos estados: filterByValue y sortByValue, que se inicializan con valores predeterminados. 
   const [filterByValue, setFilterByValue] = useState<string>('');

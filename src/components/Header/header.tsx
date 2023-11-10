@@ -6,7 +6,7 @@ import SortBy from '../SortBy/SortBy';
 import './header.css';
 
 
-
+//Interfaz para definir los tipos de las props 
 interface HeaderProps {
   onChangeFilterBy: (filter: string) => void;
   onChangeSortBy: (sortBy: string)=> void;

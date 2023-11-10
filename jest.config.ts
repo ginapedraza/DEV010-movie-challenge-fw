@@ -18,6 +18,6 @@ module.exports = {
 'src/main.tsx',
 'src/App.tsx',
 'src/components/Header',
-'src/components/filterAndSort'
+'src/components/FilterAndSort'
 ],
 };

@@ -36,7 +36,7 @@ const MoviePage = () => {
 
   if (!movie) {
     console.log('no movie');
-    return <p>Cargando...</p>; // Si "movie" es null, muestra "Cargando..."
+    return <section className='loading'><p>Cargando...</p></section>; // Si "movie" es null, muestra "Cargando..."
     
   }
   return (

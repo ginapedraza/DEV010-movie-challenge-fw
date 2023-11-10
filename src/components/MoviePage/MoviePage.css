@@ -146,3 +146,10 @@ margin-bottom: 60px;
       font-size: 16px; /* Reduce el tamaño del texto de descripción */
     }
   }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }

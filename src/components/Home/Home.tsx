@@ -2,18 +2,20 @@ import React from 'react';
 import '../../styles/App.css';
 import './Home.css';
 import '../Header/header.css';
-import Header from '../Header/header.tsx';
+import Header from '../Header/Header.tsx';
 import MovieList from '../MovieList/MovieList.tsx';
 import posterHome from '../../assets/poster-home.png';
-import { useFilterSort } from '../filterAndSort/FilterSortContext.tsx';
+import { useFilterSort } from '../FilterAndSort/FilterSortContext.tsx';
 
 const Home: React.FC = () => {
+  // Extraemos las propiedades del hook useFilterSort.
   const { filterByValue, setFilterByValue, sortByValue, setSortByValue } = useFilterSort();
 
+  //Función para cambiar el estado, toma el selectedFilterValue y actualiza el filterByValue
   const onChangeFilterBy = (selectedFilterValue: string) => {
     setFilterByValue(selectedFilterValue);
   }
-
+//Función para cambiar el estado, toma el selectedSortValue y actualiza el sortByValue
   const onChangeSortBy = (selectedValue: string) => {
     setSortByValue(selectedValue);
   }
